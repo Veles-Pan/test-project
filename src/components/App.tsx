@@ -4,11 +4,12 @@ import { CounterPageAsync } from '../pages/CounterPage/CounterPage.async'
 import { MainPageAsync } from '../pages/MainPage/MainPage.async'
 import { Suspense } from 'react'
 import { useTheme } from '../utils/theme/useTheme'
+import { classNames } from '../utils/helpers/classNames'
 
 const App = () => {
   const { theme, toggleTheme } = useTheme()
   return (
-    <div className={`app ${theme}`}>
+    <div className={classNames('app', {}, [theme])}>
       <nav className="navigation">
         <Link className="link" to={'/'}>
           Main Page
