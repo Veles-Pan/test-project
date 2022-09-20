@@ -1,4 +1,9 @@
 .button {
-  color: green;
-  padding: 20px;
+  background-color: var(--primary-color);
+  color: var(--bg-color);
+  font: var(--font-medium);
+  padding: 10px 20px;
+  outline: none;
+  border: none;
+  border-radius: 15px;
 }
