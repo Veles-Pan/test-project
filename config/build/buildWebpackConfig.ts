@@ -13,7 +13,7 @@ export const buildWebpackConfig = (
     mode: mode,
     entry: paths.entryPoint,
     module: {
-      rules: buildRules()
+      rules: buildRules(options)
     },
     resolve: buildResolvers(),
     output: {
