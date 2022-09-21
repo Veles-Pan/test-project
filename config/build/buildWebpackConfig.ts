@@ -15,7 +15,7 @@ export const buildWebpackConfig = (
     module: {
       rules: buildRules(options)
     },
-    resolve: buildResolvers(),
+    resolve: buildResolvers(options),
     output: {
       filename: '[name].[contenthash].js',
       path: paths.outputPath,

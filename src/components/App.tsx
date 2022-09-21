@@ -1,10 +1,10 @@
 import { Routes, Route, Link } from 'react-router-dom'
-import '../styles/main.scss'
-import { CounterPageAsync } from '../pages/CounterPage/CounterPage.async'
-import { MainPageAsync } from '../pages/MainPage/MainPage.async'
 import { Suspense } from 'react'
-import { useTheme } from '../utils/theme/useTheme'
-import { classNames } from '../utils/helpers/classNames'
+import '../styles/main.scss'
+import { MainPageAsync } from 'pages/MainPage/MainPage.async'
+import { useTheme } from 'utils/theme/useTheme'
+import { classNames } from 'utils/helpers/classNames'
+import { CounterPageAsync } from 'pages/CounterPage/CounterPage.async'
 
 const App = () => {
   const { theme, toggleTheme } = useTheme()

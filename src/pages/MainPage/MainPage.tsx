@@ -1,5 +1,3 @@
-import { Counter } from '../../components/Counter'
-
 const MainPage = () => {
   return (
     <div className="main">
