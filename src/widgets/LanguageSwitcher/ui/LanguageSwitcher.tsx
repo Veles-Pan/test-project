@@ -1,6 +1,6 @@
-import { useTranslation } from 'react-i18next'
-import { Button, classNames } from 'shared'
-import styles from './LanguageSwitcher.module.scss'
+import { useTranslation } from 'react-i18next';
+import { Button, classNames } from 'shared';
+import styles from './LanguageSwitcher.module.scss';
 
 interface LanguageSwitcherProps {
   className?: string
@@ -9,13 +9,13 @@ interface LanguageSwitcherProps {
 
 export const LanguageSwitcher = ({
   className,
-  isOpen
+  isOpen,
 }: LanguageSwitcherProps) => {
-  const { t, i18n } = useTranslation()
+  const { t, i18n } = useTranslation();
 
   const toggleLanguage = () => {
-    i18n.changeLanguage(i18n.language === 'en' ? 'it' : 'en')
-  }
+    i18n.changeLanguage(i18n.language === 'en' ? 'it' : 'en');
+  };
 
   return (
     <Button
@@ -24,16 +24,16 @@ export const LanguageSwitcher = ({
         styles.langSwither,
         {
           [styles.langSwitherFull]: isOpen,
-          [styles.langSwitherColladsed]: !isOpen
+          [styles.langSwitherColladsed]: !isOpen,
         },
-        [className]
+        [className],
       )}
     >
       <span
         className={styles.button}
         data-content={t('sidebar.another-langiage')}
         data-content-short={t('sidebar.another-langiage-short')}
-      ></span>
+      />
     </Button>
-  )
-}
+  );
+};

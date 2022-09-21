@@ -1,3 +1,3 @@
-import { lazy } from 'react'
+import { lazy } from 'react';
 
-export const CounterPageAsync = lazy(() => import('./CounterPage'))
+export const CounterPageAsync = lazy(() => import('./CounterPage'));

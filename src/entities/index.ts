@@ -1,1 +1,1 @@
-export { Counter } from './ui/Counter/Counter'
+export { Counter } from './ui/Counter/Counter';

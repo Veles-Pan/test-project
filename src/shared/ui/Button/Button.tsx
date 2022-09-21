@@ -1,5 +1,5 @@
-import { classNames } from 'shared'
-import styles from './Button.module.scss'
+import { classNames } from 'shared';
+import styles from './Button.module.scss';
 
 export enum ButtonThemes {
   COMMON = 'common',
@@ -16,14 +16,13 @@ export const Button: React.FC<ButtonProps> = ({
   className,
   theme = ButtonThemes.COMMON,
   onClick,
-  children
-}) => {
-  return (
-    <button
-      className={classNames(styles.button, {}, [className, styles[theme]])}
-      onClick={onClick}
-    >
-      {children}
-    </button>
-  )
-}
+  children,
+}: ButtonProps) => (
+  <button
+    type="button"
+    className={classNames(styles.button, {}, [className, styles[theme]])}
+    onClick={onClick}
+  >
+    {children}
+  </button>
+);

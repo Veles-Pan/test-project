@@ -1,9 +1,9 @@
-import MiniCssExtractPlugin from 'mini-css-extract-plugin'
-import webpack from 'webpack'
-import { BuildOptions } from './types/config'
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+import webpack from 'webpack';
+import { BuildOptions } from './types/config';
 
 export const buildRules = ({
-  isDevelopment
+  isDevelopment,
 }: BuildOptions): webpack.RuleSetRule[] => {
   const scssRules = {
     test: /\.s[ac]ss$/i,
@@ -16,34 +16,34 @@ export const buildRules = ({
             auto: (resPath: string) => Boolean(resPath.includes('.module.')),
             localIdentName: isDevelopment
               ? '[local]_[hash:base64:8]'
-              : '[hash:base64:8]'
-          }
-        }
+              : '[hash:base64:8]',
+          },
+        },
       },
-      'sass-loader'
-    ]
-  }
+      'sass-loader',
+    ],
+  };
 
   const typescriptRules = {
     test: /\.tsx?$/,
     use: 'ts-loader',
-    exclude: /node_modules/
-  }
+    exclude: /node_modules/,
+  };
 
   const svgRules = {
     test: /\.svg$/i,
     issuer: /\.[jt]sx?$/,
-    use: ['@svgr/webpack']
-  }
+    use: ['@svgr/webpack'],
+  };
 
   const imgRules = {
     test: /\.(png|jpe?g|gif)$/i,
     use: [
       {
-        loader: 'file-loader'
-      }
-    ]
-  }
+        loader: 'file-loader',
+      },
+    ],
+  };
 
   const babelRules = {
     test: /\.(js|jsx|tsx)$/,
@@ -51,10 +51,10 @@ export const buildRules = ({
     use: {
       loader: 'babel-loader',
       options: {
-        presets: ['@babel/preset-env']
-      }
-    }
-  }
+        presets: ['@babel/preset-env'],
+      },
+    },
+  };
 
-  return [babelRules, typescriptRules, scssRules, svgRules, imgRules]
-}
+  return [babelRules, typescriptRules, scssRules, svgRules, imgRules];
+};
