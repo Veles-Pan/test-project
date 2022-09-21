@@ -1,0 +1,11 @@
+{
+  "header": {
+    "main-page": "Main Page",
+    "counter-page": "Counter Page",
+    "change-theme": "Change Theme"
+  },
+  "sidebar": {
+    "another-langiage": "Italiana",
+    "another-langiage-short": "IT"
+  }
+}

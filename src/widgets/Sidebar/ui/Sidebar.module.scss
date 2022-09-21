@@ -5,6 +5,9 @@
   top: 0;
   margin: auto;
   bottom: 0;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
   height: 60vh;
   border-radius: 0 20px 20px 0;
   background-color: var(--header-color);

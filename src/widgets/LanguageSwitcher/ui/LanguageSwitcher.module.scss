@@ -1,0 +1,49 @@
+.langSwither {
+  position: relative;
+  height: 2rem;
+  width: 100%;
+  margin: 20px 15px;
+  transition: all 0.2s ease-in;
+  animation: langSwither 3s linear infinite alternate;
+}
+
+.langSwither .button::before {
+  position: absolute;
+  text-transform: uppercase;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+.langSwitherFull .button::before {
+  content: attr(data-content);
+  animation: langSwitherToFull 0.6s ease-in-out;
+}
+.langSwitherColladsed {
+  margin: 20px 10px;
+}
+.langSwitherColladsed .button::before {
+  content: attr(data-content-short);
+  animation: langSwitherToShort 0.6s ease-in-out;
+}
+
+@keyframes langSwitherToShort {
+  0% {
+    content: attr(data-content);
+  }
+
+  50% {
+    content: attr(data-content-short);
+  }
+}
+
+@keyframes langSwitherToFull {
+  0% {
+    content: attr(data-content-short);
+  }
+
+  70% {
+    content: attr(data-content);
+  }
+}

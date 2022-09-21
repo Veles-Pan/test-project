@@ -1,0 +1,11 @@
+{
+  "header": {
+    "main-page": "Pagina Principale",
+    "counter-page": "Pagina Contatore",
+    "change-theme": "Cambia tema"
+  },
+  "sidebar": {
+    "another-langiage": "English",
+    "another-langiage-short": "EN"
+  }
+}
