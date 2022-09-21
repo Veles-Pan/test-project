@@ -16,13 +16,16 @@
   right: 0;
   margin: auto;
 }
+
 .langSwitherFull .button::before {
   content: attr(data-content);
   animation: langSwitherToFull 0.6s ease-in-out;
 }
+
 .langSwitherColladsed {
   margin: 20px 10px;
 }
+
 .langSwitherColladsed .button::before {
   content: attr(data-content-short);
   animation: langSwitherToShort 0.6s ease-in-out;
