@@ -1,0 +1,24 @@
+.button:hover {
+  cursor: pointer;
+  opacity: 0.9;
+}
+
+.common {
+  background-color: var(--primary-color);
+  color: var(--bg-color);
+  font: var(--font-medium);
+  padding: 10px 20px;
+  outline: none;
+  border: none;
+  border-radius: 15px;
+}
+
+.themeSwitcher {
+  font: var(--font-medium);
+  color: var(--secondary-color);
+  background: var(--bg-color);
+  padding: 10px 20px;
+  outline: none;
+  border: none;
+  border-radius: 15px;
+}

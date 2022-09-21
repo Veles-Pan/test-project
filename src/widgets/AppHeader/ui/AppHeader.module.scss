@@ -1,0 +1,15 @@
+.header {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  gap: 30px;
+  height: var(--header-height);
+  background: var(--header-color);
+  width: 80%;
+  border-radius: 0 0 20px 20px;
+}

@@ -1,4 +1,6 @@
 import { useState } from 'react'
+import { Button, classNames } from 'shared'
+import { ButtonThemes } from 'shared/ui/Button/Button'
 import styles from './Counter.module.scss'
 
 export const Counter = () => {
@@ -9,11 +11,11 @@ export const Counter = () => {
   }
 
   return (
-    <div className="counter">
+    <div className={classNames(styles.counter, {}, [])}>
       <h2>{counter}</h2>
-      <button onClick={handleIncrement} className={styles.button}>
+      <Button onClick={handleIncrement} theme={ButtonThemes.COMMON}>
         Plus 1
-      </button>
+      </Button>
     </div>
   )
 }
