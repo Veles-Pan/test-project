@@ -3,22 +3,18 @@ import './styles/main.scss'
 import { useTheme } from './providers/ThemeProvider'
 import { classNames } from 'shared'
 import { AppRouter } from './providers/router'
+import { NavBar } from 'widgets/NavBar'
 
 const App = () => {
   const { theme, toggleTheme } = useTheme()
   return (
     <div className={classNames('app', {}, [theme])}>
-      <nav className="navigation">
-        <Link className="link" to={'/'}>
-          Main Page
-        </Link>
-        <Link className="link" to={'/counter'}>
-          Counter Page
-        </Link>
+      <header className="header">
+        <NavBar />
         <button className="button theme-button" onClick={toggleTheme}>
           Change Theme
         </button>
-      </nav>
+      </header>
       <AppRouter />
     </div>
   )

@@ -1,0 +1,9 @@
+.link {
+  font-size: 20px;
+  text-decoration: none;
+  color: var(--color-primary);
+}
+.link:hover {
+  cursor: pointer;
+  opacity: 0.5;
+}
