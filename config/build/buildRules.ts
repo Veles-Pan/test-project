@@ -45,5 +45,16 @@ export const buildRules = ({
     ]
   }
 
-  return [typescriptRules, scssRules, svgRules, imgRules]
+  const babelRules = {
+    test: /\.(js|jsx|tsx)$/,
+    exclude: /node_modules/,
+    use: {
+      loader: 'babel-loader',
+      options: {
+        presets: ['@babel/preset-env']
+      }
+    }
+  }
+
+  return [babelRules, typescriptRules, scssRules, svgRules, imgRules]
 }

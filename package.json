@@ -13,6 +13,8 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@babel/core": "^7.19.1",
+    "@babel/preset-env": "^7.19.1",
     "@pmmmwh/react-refresh-webpack-plugin": "^0.5.7",
     "@svgr/webpack": "^6.3.1",
     "@types/node": "^18.7.18",
@@ -21,6 +23,7 @@
     "@types/react-router-dom": "^5.3.3",
     "@types/webpack": "^5.28.0",
     "@types/webpack-dev-server": "^4.7.2",
+    "babel-loader": "^8.2.5",
     "css-loader": "^6.7.1",
     "file-loader": "^6.2.0",
     "html-webpack-plugin": "^5.5.0",
