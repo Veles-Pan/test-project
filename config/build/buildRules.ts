@@ -30,5 +30,20 @@ export const buildRules = ({
     exclude: /node_modules/
   }
 
-  return [typescriptRules, scssRules]
+  const svgRules = {
+    test: /\.svg$/i,
+    issuer: /\.[jt]sx?$/,
+    use: ['@svgr/webpack']
+  }
+
+  const imgRules = {
+    test: /\.(png|jpe?g|gif)$/i,
+    use: [
+      {
+        loader: 'file-loader'
+      }
+    ]
+  }
+
+  return [typescriptRules, scssRules, svgRules, imgRules]
 }
