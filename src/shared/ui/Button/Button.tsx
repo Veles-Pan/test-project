@@ -3,7 +3,8 @@ import styles from './Button.module.scss'
 
 export enum ButtonThemes {
   COMMON = 'common',
-  SWITCHER = 'themeSwitcher'
+  SWITCHER = 'themeSwitcher',
+  CLEAN = 'clean'
 }
 
 interface ButtonProps extends React.HTMLAttributes<HTMLButtonElement> {

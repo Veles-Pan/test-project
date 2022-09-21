@@ -1,3 +1,7 @@
+.button {
+  outline: none;
+  border: none;
+}
 .button:hover {
   cursor: pointer;
   opacity: 0.9;
@@ -8,8 +12,6 @@
   color: var(--bg-color);
   font: var(--font-medium);
   padding: 10px 20px;
-  outline: none;
-  border: none;
   border-radius: 15px;
 }
 
@@ -18,7 +20,9 @@
   color: var(--secondary-color);
   background: var(--bg-color);
   padding: 10px 20px;
-  outline: none;
-  border: none;
   border-radius: 15px;
+}
+
+.clean {
+  background: none;
 }

@@ -6,6 +6,7 @@ import { AppRouter } from './providers/router'
 import { NavBar } from 'widgets/NavBar'
 import { ThemeSwitcher } from 'widgets/ThemeSwitcher'
 import { AppHeader } from 'widgets/AppHeader'
+import { Sidebar } from 'widgets/Sidebar'
 
 const App = () => {
   const { theme } = useTheme()
@@ -13,6 +14,7 @@ const App = () => {
     <div className={classNames('app', {}, [theme])}>
       <AppHeader />
       <AppRouter />
+      <Sidebar />
     </div>
   )
 }

@@ -1,0 +1,28 @@
+.sidebar {
+  position: absolute;
+  width: 200px;
+  left: 0;
+  top: 0;
+  margin: auto;
+  bottom: 0;
+  height: 60vh;
+  border-radius: 0 20px 20px 0;
+  background-color: var(--header-color);
+  transition: width 0.4s;
+}
+.collapsed {
+  width: 70px;
+}
+.button {
+  position: absolute;
+  transition: transform 0.4s;
+  right: 0;
+  top: 0;
+  margin: 10px 15px;
+}
+.buttonInverted {
+  transform: rotate(180deg);
+}
+.arrow {
+  fill: var(--bg-color);
+}
