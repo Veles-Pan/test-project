@@ -1,11 +1,8 @@
-import { Routes, Route, Link } from 'react-router-dom'
-import { Suspense } from 'react'
+import { Link } from 'react-router-dom'
 import './styles/main.scss'
-
 import { useTheme } from './providers/ThemeProvider'
-import { CounterPage } from 'pages/CounterPage'
-import { MainPage } from 'pages/MainPage'
 import { classNames } from 'shared'
+import { AppRouter } from './providers/router'
 
 const App = () => {
   const { theme, toggleTheme } = useTheme()
@@ -22,12 +19,7 @@ const App = () => {
           Change Theme
         </button>
       </nav>
-      <Suspense fallback={<div>Loading...</div>}>
-        <Routes>
-          <Route path="/counter" element={<CounterPage />} />
-          <Route path="/" element={<MainPage />} />
-        </Routes>
-      </Suspense>
+      <AppRouter />
     </div>
   )
 }
