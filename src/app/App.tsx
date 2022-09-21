@@ -1,10 +1,11 @@
 import { Routes, Route, Link } from 'react-router-dom'
 import { Suspense } from 'react'
-import '../styles/main.scss'
-import { MainPageAsync } from 'pages/MainPage/MainPage.async'
-import { useTheme } from 'utils/theme/useTheme'
-import { classNames } from 'utils/helpers/classNames'
-import { CounterPageAsync } from 'pages/CounterPage/CounterPage.async'
+import './styles/main.scss'
+
+import { useTheme } from './providers/ThemeProvider'
+import { CounterPage } from 'pages/CounterPage'
+import { MainPage } from 'pages/MainPage'
+import { classNames } from 'shared'
 
 const App = () => {
   const { theme, toggleTheme } = useTheme()
@@ -23,8 +24,8 @@ const App = () => {
       </nav>
       <Suspense fallback={<div>Loading...</div>}>
         <Routes>
-          <Route path="/counter" element={<CounterPageAsync />} />
-          <Route path="/" element={<MainPageAsync />} />
+          <Route path="/counter" element={<CounterPage />} />
+          <Route path="/" element={<MainPage />} />
         </Routes>
       </Suspense>
     </div>
