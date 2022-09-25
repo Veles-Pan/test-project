@@ -9,7 +9,7 @@
     "moduleResolution": "node",
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
-    "types": ["react/next", "react-dom/next"],
+    "types": ["react/next", "react-dom/next", "jest"],
     "baseUrl": ".",
     "paths": {
       "*": ["./src/*"]
@@ -17,7 +17,9 @@
   },
   "ts-node": {
     "compilerOptions": {
-      "module": "CommonJS"
+      "module": "CommonJS",
+      "types": [ "node", "jest" ],
+      "moduleResolution": "node"
     }
   }
 }
