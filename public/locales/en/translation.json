@@ -8,5 +8,9 @@
     "another-langiage": "Italiana",
     "another-langiage-short": "IT"
   },
-  "not-found": "Page is not found"
+  "not-found": "Page is not found",
+  "page-error": {
+    "title": "Something went wrong",
+    "button": "Reload Page"
+  }
 }

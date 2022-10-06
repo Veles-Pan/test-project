@@ -4,7 +4,8 @@ import styles from './Button.module.scss';
 export enum ButtonThemes {
   COMMON = 'common',
   SWITCHER = 'themeSwitcher',
-  CLEAN = 'clean'
+  CLEAN = 'clean',
+  RELOAD = 'reload'
 }
 
 interface ButtonProps extends React.HTMLAttributes<HTMLButtonElement> {
