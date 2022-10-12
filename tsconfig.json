@@ -21,5 +21,10 @@
       "types": [ "node", "jest" ],
       "moduleResolution": "node"
     }
-  }
+  },
+  "include": [
+    "./config/jest/setupTests.ts",
+    "./src/**/*.tsx",
+    "./src/**/*.ts"
+  ],
 }

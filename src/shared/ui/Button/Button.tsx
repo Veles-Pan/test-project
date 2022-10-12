@@ -1,3 +1,4 @@
+import { FC, HTMLAttributes } from 'react';
 import { classNames } from 'shared';
 import styles from './Button.module.scss';
 
@@ -8,18 +9,20 @@ export enum ButtonThemes {
   RELOAD = 'reload'
 }
 
-interface ButtonProps extends React.HTMLAttributes<HTMLButtonElement> {
+interface ButtonProps extends HTMLAttributes<HTMLButtonElement> {
   className?: string
   theme?: ButtonThemes
 }
 
-export const Button: React.FC<ButtonProps> = ({
+export const Button: FC<ButtonProps> = ({
   className,
   theme = ButtonThemes.COMMON,
   onClick,
   children,
+  ...rest
 }: ButtonProps) => (
   <button
+    {...rest}
     type="button"
     className={classNames(styles.button, {}, [className, styles[theme]])}
     onClick={onClick}

@@ -17,11 +17,13 @@ export const Sidebar = ({ className }: SidebarProps) => {
 
   return (
     <div
+      data-testid="sidebar"
       className={classNames(styles.sidebar, { [styles.collapsed]: !isOpen }, [
         className,
       ])}
     >
       <Button
+        data-testid="sidebar-toggle"
         className={classNames(styles.button, {
           [styles.buttonInverted]: isOpen,
         })}
