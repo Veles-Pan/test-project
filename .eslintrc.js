@@ -31,6 +31,7 @@ module.exports = {
     'import/no-extraneous-dependencies': 'off',
     'no-underscore-dangle': 'off',
     'no-undef': 'warn',
+    'linebreak-style': ['warn', 'windows'],
   },
   globals: {
     __IS_DEV__: true,
