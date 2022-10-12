@@ -6,16 +6,12 @@
   margin: auto;
   bottom: 0;
   display: flex;
-  justify-content: flex-start;
   align-items: center;
+  justify-content: center;
   height: 60vh;
   border-radius: 0 20px 20px 0;
   background-color: var(--header-color);
   transition: width 0.4s;
-}
-
-.collapsed {
-  width: 70px;
 }
 
 .button {
@@ -32,4 +28,82 @@
 
 .arrow {
   fill: var(--bg-color);
+}
+
+.items {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+}
+
+.item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-left: 18px;
+  align-self: flex-start;
+}
+
+.counterIcon {
+  width: 30px;
+  height: 30px;
+  fill: var(--bg-color);
+}
+
+.counterText {
+  animation: itemToShort 2s ease-in-out;
+}
+
+.collapsed {
+  width: 70px;
+
+  .item {
+    align-self: auto;
+    margin-left: 0;
+  }
+
+  .counterText {
+    display: none;
+    animation: itemToFull 2s ease-in-out;
+  }
+}
+
+@keyframes itemToShort {
+  0% {
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    display: none;
+  }
+
+  30% {
+    position: initial;
+  }
+
+  90% {
+    opacity: 1;
+    visibility: initial;
+    display: none;
+  }
+
+  100% {
+    display: block;
+  }
+}
+
+@keyframes itemToFull {
+  0% {
+    opacity: 1;
+    visibility: initial;
+    display: block;
+  }
+
+  70% {
+    opacity: 0;
+    visibility: hidden;
+    display: none;
+  }
 }

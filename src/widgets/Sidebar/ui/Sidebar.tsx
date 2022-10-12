@@ -1,7 +1,11 @@
 import { useState } from 'react';
-import { Button, classNames, ToggleArrowImage } from 'shared';
+import { useTranslation } from 'react-i18next';
+import {
+  AppLink, Button, classNames, ToggleArrowImage,
+} from 'shared';
 import { ButtonThemes } from 'shared/ui/Button/Button';
 import { LanguageSwitcher } from 'widgets/LanguageSwitcher';
+import CounterIcon from 'shared/assets/counter.svg';
 import styles from './Sidebar.module.scss';
 
 interface SidebarProps {
@@ -10,6 +14,7 @@ interface SidebarProps {
 
 export const Sidebar = ({ className }: SidebarProps) => {
   const [isOpen, setIsOpen] = useState(false);
+  const { t } = useTranslation();
 
   const toggleSidebar = () => {
     setIsOpen((prev) => !prev);
@@ -32,10 +37,17 @@ export const Sidebar = ({ className }: SidebarProps) => {
       >
         <ToggleArrowImage className={styles.arrow} />
       </Button>
-      <LanguageSwitcher
-        isOpen={isOpen}
-        className={classNames(styles.langSwitcher)}
-      />
+      <div className={styles.items}>
+        <LanguageSwitcher
+          isOpen={isOpen}
+          className={classNames(styles.langSwitcher)}
+        />
+        <AppLink className={`link ${styles.item}`} to="/counter">
+          <CounterIcon className={styles.counterIcon} />
+          <div className={styles.counterText}>{t('sidebar.counter-page')}</div>
+        </AppLink>
+
+      </div>
     </div>
   );
 };
