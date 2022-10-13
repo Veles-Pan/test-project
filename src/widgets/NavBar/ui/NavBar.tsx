@@ -15,9 +15,6 @@ export const NavBar = ({ className }: NavBarProps) => {
       <AppLink className="link active" to="/">
         {t('header.main-page')}
       </AppLink>
-      <AppLink className="link" to="/counter">
-        {t('header.counter-page')}
-      </AppLink>
     </nav>
   );
 };
