@@ -1,4 +1,5 @@
 {
   "counter-welcome": "This is counter page",
-  "counter-plus-button": "Plus 1"
+  "counter-plus-button": "Plus 1",
+  "counter-minus-button": "Minus 1"
 }
