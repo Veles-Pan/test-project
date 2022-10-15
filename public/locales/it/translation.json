@@ -2,7 +2,8 @@
   "header": {
     "main-page": "Pagina Principale",
     "counter-page": "Pagina Contatore",
-    "change-theme": "Cambia tema"
+    "change-theme": "Cambia tema",
+    "login": "Accesso"
   },
   "sidebar": {
     "another-langiage": "English",
@@ -13,5 +14,9 @@
   "page-error": {
     "title": "Qualcosa è andato storto",
     "button": "Ricarica la pagina"
+  },
+  "login-form": {
+    "button": "Accesso",
+    "text": "Accedi al tuo account"
   }
 }

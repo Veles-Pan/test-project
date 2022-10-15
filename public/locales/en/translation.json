@@ -2,7 +2,8 @@
   "header": {
     "main-page": "Main Page",
     "counter-page": "Counter Page",
-    "change-theme": "Change Theme"
+    "change-theme": "Change Theme",
+    "login": "Log In"
   },
   "sidebar": {
     "another-langiage": "Italiana",
@@ -13,5 +14,9 @@
   "page-error": {
     "title": "Something went wrong",
     "button": "Reload Page"
+  },
+  "login-form": {
+    "button": "Log In",
+    "text": "Log In to your account"
   }
 }

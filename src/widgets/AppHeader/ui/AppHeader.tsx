@@ -1,6 +1,8 @@
+import { LoginModal } from 'features/AuthByUsername';
 import { useCallback, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import {
-  Button, classNames, LogoImage, Modal,
+  Button, classNames, LogoImage,
 } from 'shared';
 import { NavBar } from 'widgets/NavBar';
 import { ThemeSwitcher } from 'widgets/ThemeSwitcher';
@@ -13,8 +15,14 @@ interface AppHeaderProps {
 export const AppHeader = ({ className }: AppHeaderProps) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const onToggleModal = useCallback(() => {
-    setIsModalOpen((prev) => !prev);
+  const { t } = useTranslation();
+
+  const openModal = useCallback(() => {
+    setIsModalOpen(true);
+  }, []);
+
+  const closeModal = useCallback(() => {
+    setIsModalOpen(false);
   }, []);
 
   return (
@@ -24,23 +32,8 @@ export const AppHeader = ({ className }: AppHeaderProps) => {
       </div>
       <NavBar />
       <ThemeSwitcher />
-      <Modal isOpen={isModalOpen} onClose={onToggleModal}>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-          sed do eiusmod tempor incididunt ut labore et dolore magna
-          aliqua.
-          Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-          nisi ut aliquip
-          ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-          voluptate velit esse
-          cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-          cupidatat non proident,
-          sunt in culpa qui
-          officia deserunt mollit anim id est laborum
-
-        </p>
-      </Modal>
-      <Button onClick={onToggleModal}>Log In</Button>
+      <LoginModal isOpen={isModalOpen} onClose={closeModal} />
+      <Button onClick={openModal}>{t('header.login')}</Button>
     </header>
   );
 };
