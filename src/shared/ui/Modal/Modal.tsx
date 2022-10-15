@@ -1,4 +1,4 @@
-import React, {
+import {
   useEffect, ReactNode, MouseEvent, useState, useRef, useCallback,
 } from 'react';
 import { classNames } from 'shared';
@@ -49,7 +49,6 @@ export const Modal = ({
     if (isOpen) {
       window.addEventListener('keydown', onKeyDown);
     }
-    const a = 0;
     return () => {
       clearTimeout(timeRef.current);
       window.removeEventListener('keydown', onKeyDown);
