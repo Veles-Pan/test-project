@@ -12,6 +12,7 @@ export enum ButtonThemes {
 interface ButtonProps extends HTMLAttributes<HTMLButtonElement> {
   className?: string
   theme?: ButtonThemes
+  disabled?: boolean
 }
 
 export const Button: FC<ButtonProps> = ({
@@ -19,11 +20,13 @@ export const Button: FC<ButtonProps> = ({
   theme = ButtonThemes.COMMON,
   onClick,
   children,
+  disabled = false,
   ...rest
 }: ButtonProps) => (
   <button
     {...rest}
     type="button"
+    disabled={disabled}
     className={classNames(styles.button, {}, [className, styles[theme]])}
     onClick={onClick}
   >

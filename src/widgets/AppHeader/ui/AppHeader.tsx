@@ -1,6 +1,8 @@
+import { getUserData, userActions } from 'entities/User';
 import { LoginModal } from 'features/AuthByUsername';
 import { useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { useDispatch, useSelector } from 'react-redux';
 import {
   Button, classNames, LogoImage,
 } from 'shared';
@@ -14,6 +16,8 @@ interface AppHeaderProps {
 
 export const AppHeader = ({ className }: AppHeaderProps) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const dispatch = useDispatch();
+  const authData = useSelector(getUserData);
 
   const { t } = useTranslation();
 
@@ -25,6 +29,10 @@ export const AppHeader = ({ className }: AppHeaderProps) => {
     setIsModalOpen(false);
   }, []);
 
+  const onLogout = useCallback(() => {
+    dispatch(userActions.logout());
+  }, [dispatch]);
+
   return (
     <header className={classNames(styles.header, {}, [className])}>
       <div>
@@ -32,8 +40,13 @@ export const AppHeader = ({ className }: AppHeaderProps) => {
       </div>
       <NavBar />
       <ThemeSwitcher />
-      <LoginModal isOpen={isModalOpen} onClose={closeModal} />
-      <Button onClick={openModal}>{t('header.login')}</Button>
+      {authData ? (<Button onClick={onLogout}>{t('header.logout')}</Button>) : (
+        <>
+          <LoginModal isOpen={isModalOpen} onClose={closeModal} />
+          <Button onClick={openModal}>{t('header.login')}</Button>
+        </>
+      )}
+
     </header>
   );
 };

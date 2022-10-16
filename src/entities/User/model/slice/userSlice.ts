@@ -1,12 +1,19 @@
-import { createSlice } from '@reduxjs/toolkit';
-import { UserSchema } from '../types/UserSchema';
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { User, UserSchema } from '../types/UserSchema';
 
 const initialState: UserSchema = {};
 
 export const userSlice = createSlice({
   name: 'user',
   initialState,
-  reducers: {},
+  reducers: {
+    setUserData: (state, action: PayloadAction<User>) => {
+      state.user = action.payload;
+    },
+    logout: (state) => {
+      state.user = undefined;
+    },
+  },
 });
 
 export const { actions: userActions } = userSlice;

@@ -3,7 +3,8 @@
     "main-page": "Pagina Principale",
     "counter-page": "Pagina Contatore",
     "change-theme": "Cambia tema",
-    "login": "Accesso"
+    "login": "Accesso",
+    "logout": "Disconnettersi"
   },
   "sidebar": {
     "another-langiage": "English",

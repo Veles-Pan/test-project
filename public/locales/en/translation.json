@@ -3,7 +3,8 @@
     "main-page": "Main Page",
     "counter-page": "Counter Page",
     "change-theme": "Change Theme",
-    "login": "Log In"
+    "login": "Log In",
+    "logout": "Log Out"
   },
   "sidebar": {
     "another-langiage": "Italiana",
