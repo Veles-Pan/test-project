@@ -42,7 +42,7 @@ export const AppHeader = ({ className }: AppHeaderProps) => {
       <ThemeSwitcher />
       {authData ? (<Button onClick={onLogout}>{t('header.logout')}</Button>) : (
         <>
-          <LoginModal isOpen={isModalOpen} onClose={closeModal} />
+          {isModalOpen && <LoginModal isOpen={isModalOpen} onClose={closeModal} />}
           <Button onClick={openModal}>{t('header.login')}</Button>
         </>
       )}

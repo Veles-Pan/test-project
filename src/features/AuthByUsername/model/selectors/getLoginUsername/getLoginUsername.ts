@@ -4,5 +4,5 @@ import { getLogin } from '../getLoginState/getLogin';
 
 export const getLoginUsername = createSelector(
   getLogin,
-  (counter: LoginSchema) => counter.username,
+  (login: LoginSchema) => login?.username,
 );

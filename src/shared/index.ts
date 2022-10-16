@@ -7,4 +7,5 @@ export { Button, ButtonThemes } from './ui/Button/Button';
 export { Modal } from './ui/Modal/Modal';
 export { Input } from './ui/Input/Input';
 export { Text, TextThemes } from './ui/Text/Text';
+export { DynamicReducersLoader } from './components/DynamicReducersLoader/DynamicReducersLoader';
 export { LogoImage, ToggleArrowImage };
