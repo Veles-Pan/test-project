@@ -2,9 +2,9 @@ import { getUserData, userActions } from 'entities/User';
 import { LoginModal } from 'features/AuthByUsername';
 import { useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import {
-  Button, classNames, LogoImage,
+  Button, classNames, LogoImage, useAppDispatch,
 } from 'shared';
 import { NavBar } from 'widgets/NavBar';
 import { ThemeSwitcher } from 'widgets/ThemeSwitcher';
@@ -16,7 +16,7 @@ interface AppHeaderProps {
 
 export const AppHeader = ({ className }: AppHeaderProps) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
   const authData = useSelector(getUserData);
 
   const { t } = useTranslation();
