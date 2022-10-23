@@ -57,3 +57,9 @@ Reload.args = {
   children: 'Text',
   theme: ButtonThemes.RELOAD,
 };
+
+export const Disabled = Template.bind({});
+Disabled.args = {
+  children: 'Text',
+  disabled: true,
+};

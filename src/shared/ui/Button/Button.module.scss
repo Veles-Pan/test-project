@@ -1,11 +1,16 @@
 .button {
   outline: none;
   border: none;
-}
 
-.button:hover {
-  cursor: pointer;
-  opacity: 0.9;
+  &:hover {
+    cursor: pointer;
+    opacity: 0.9;
+  }
+
+  &:disabled {
+    pointer-events: none;
+    opacity: 0.4;
+  }
 }
 
 .common {
@@ -31,8 +36,8 @@
 
 .reload {
   font: var(--font-medium);
-  color: #000;
-  background: #d1b4e2;
+  color: var(--reload-button-text-color);
+  background: var(--reload-button-bg-color);
   padding: 10px 20px;
   border-radius: 15px;
 }

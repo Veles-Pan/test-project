@@ -15,8 +15,10 @@
   --font-line-large: 1.8;
   --font-large:
     var(--font-size-large) / var(--font-line-large)
-    var(--fon-family-base);
+    var(--fon-family-titles);
   --header-height: 6rem;
   --modal-z-index: 10;
   --overlay-bg-color: rgb(0 0 0 / 50%);
+  --reload-button-bg-color: #d1b4e2;
+  --reload-button-text-color: #000;
 }

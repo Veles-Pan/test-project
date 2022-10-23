@@ -1,6 +1,10 @@
+import { getUserData, userActions } from 'entities/User';
+import { LoginModal } from 'features/AuthByUsername';
 import { useCallback, useState } from 'react';
+import { useTranslation } from 'react-i18next';
+import { useSelector } from 'react-redux';
 import {
-  Button, classNames, LogoImage, Modal,
+  Button, classNames, LogoImage, useAppDispatch,
 } from 'shared';
 import { NavBar } from 'widgets/NavBar';
 import { ThemeSwitcher } from 'widgets/ThemeSwitcher';
@@ -12,10 +16,22 @@ interface AppHeaderProps {
 
 export const AppHeader = ({ className }: AppHeaderProps) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const dispatch = useAppDispatch();
+  const authData = useSelector(getUserData);
 
-  const onToggleModal = useCallback(() => {
-    setIsModalOpen((prev) => !prev);
+  const { t } = useTranslation();
+
+  const openModal = useCallback(() => {
+    setIsModalOpen(true);
   }, []);
+
+  const closeModal = useCallback(() => {
+    setIsModalOpen(false);
+  }, []);
+
+  const onLogout = useCallback(() => {
+    dispatch(userActions.logout());
+  }, [dispatch]);
 
   return (
     <header className={classNames(styles.header, {}, [className])}>
@@ -24,23 +40,13 @@ export const AppHeader = ({ className }: AppHeaderProps) => {
       </div>
       <NavBar />
       <ThemeSwitcher />
-      <Modal isOpen={isModalOpen} onClose={onToggleModal}>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-          sed do eiusmod tempor incididunt ut labore et dolore magna
-          aliqua.
-          Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-          nisi ut aliquip
-          ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-          voluptate velit esse
-          cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-          cupidatat non proident,
-          sunt in culpa qui
-          officia deserunt mollit anim id est laborum
+      {authData ? (<Button onClick={onLogout}>{t('header.logout')}</Button>) : (
+        <>
+          {isModalOpen && <LoginModal isOpen={isModalOpen} onClose={closeModal} />}
+          <Button onClick={openModal}>{t('header.login')}</Button>
+        </>
+      )}
 
-        </p>
-      </Modal>
-      <Button onClick={onToggleModal}>Log In</Button>
     </header>
   );
 };
