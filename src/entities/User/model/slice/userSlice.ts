@@ -1,4 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { LOCAL_STORAGE_AUTH } from 'shared';
 import { User, UserSchema } from '../types/UserSchema';
 
 const initialState: UserSchema = {};
@@ -9,9 +10,11 @@ export const userSlice = createSlice({
   reducers: {
     setUserData: (state, action: PayloadAction<User>) => {
       state.user = action.payload;
+      localStorage.setItem(LOCAL_STORAGE_AUTH, state.user.username);
     },
     logout: (state) => {
       state.user = undefined;
+      localStorage.removeItem(LOCAL_STORAGE_AUTH);
     },
   },
 });

@@ -10,4 +10,5 @@ export { Text, TextThemes } from './ui/Text/Text';
 export { Currency, Country } from './constants/common';
 export { DynamicReducersLoader, ReducersList } from './components/DynamicReducersLoader/DynamicReducersLoader';
 export { useAppDispatch } from './lib/hooks/useAppDispatch';
+export { LOCAL_STORAGE_THEME_KEY, LOCAL_STORAGE_AUTH } from './constants/localStorage';
 export { LogoImage, ToggleArrowImage };
