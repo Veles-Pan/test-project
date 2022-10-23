@@ -2,9 +2,8 @@ import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import {
-  Button, classNames, DynamicReducersLoader, Input, Text, TextThemes, useAppDispatch,
+  Button, classNames, DynamicReducersLoader, Input, ReducersList, Text, TextThemes, useAppDispatch,
 } from 'shared';
-import { ReducersList } from 'shared/components/DynamicReducersLoader/DynamicReducersLoader';
 import { getLoginUsername } from '../../model/selectors/getLoginUsername/getLoginUsername';
 import { getLoginPassword } from '../../model/selectors/getLoginPassword/getLoginPassword';
 import { loginByUsername } from '../../model/services/loginByUsername/loginByUsername';

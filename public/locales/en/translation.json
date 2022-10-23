@@ -9,7 +9,8 @@
   "sidebar": {
     "another-langiage": "Italiana",
     "another-langiage-short": "IT",
-    "counter-page": "Go Count"
+    "counter-page": "Go Count",
+    "profile-page": "Profile"
   },
   "not-found": "Page is not found",
   "page-error": {

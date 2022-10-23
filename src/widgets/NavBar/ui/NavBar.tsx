@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { classNames, AppLink } from 'shared';
 
@@ -7,7 +8,7 @@ interface NavBarProps {
   className?: string
 }
 
-export const NavBar = ({ className }: NavBarProps) => {
+export const NavBar = memo(({ className }: NavBarProps) => {
   const { t } = useTranslation();
 
   return (
@@ -17,4 +18,4 @@ export const NavBar = ({ className }: NavBarProps) => {
       </AppLink>
     </nav>
   );
-};
+});
