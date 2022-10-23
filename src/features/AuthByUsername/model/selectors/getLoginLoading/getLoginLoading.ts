@@ -1,6 +1,6 @@
 import { createSelector } from '@reduxjs/toolkit';
 import { LoginSchema } from '../../types/LoginSchema';
-import { getLogin } from '../getLoginState/getLogin';
+import { getLogin } from '../getLogin/getLogin';
 
 export const getLoginLoading = createSelector(
   getLogin,
