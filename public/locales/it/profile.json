@@ -1,4 +1,12 @@
 {
-    "profile-welcome": "Questa è la pagina del profilo"
-  }
+    "profile-welcome": "Questa è la pagina del profilo",
+    "profile-title": "Profilo",
+    "profile-edit-button": "Modificare",
+    "profile-card": {
+      "first-name": "Nome di battesimo",
+      "last-name": "Cognome",
+      "age": "Età",
+      "country": "Paese"
+    }
+}
   

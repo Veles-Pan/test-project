@@ -1,4 +1,12 @@
 {
-    "profile-welcome": "This is profile page"
-  }
+    "profile-welcome": "This is profile page",
+    "profile-title": "Profile",
+    "profile-edit-button": "Edit",
+    "profile-card": {
+      "first-name": "First Name",
+      "last-name": "Last Name",
+      "age": "Age",
+      "country": "Country"
+    }
+}
   

@@ -37,6 +37,12 @@ server.post('/login', (req, res) => {
   }
 });
 
+server.get('/profiles/:id', (req, res) => {
+  const { id } = req.params;
+  const profile = router.db.get('profiles').find({ id }).value();
+  res.jsonp(profile);
+});
+
 // eslint-disable-next-line
 server.use((req, res, next) => {
   if (!req.headers.authorization) {

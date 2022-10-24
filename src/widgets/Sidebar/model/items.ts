@@ -12,7 +12,7 @@ export interface SidebarItemProps {
 
 export const sidebarItems: Omit<SidebarItemProps, 'collapsed'>[] = [
   {
-    path: RoutePath.main,
+    path: RoutePath.counter,
     text: 'sidebar.counter-page',
     Icon: CounterIcon,
   },

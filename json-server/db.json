@@ -30,7 +30,8 @@
       "password": "123"
     }
   ],
-  "profiles": [{
+  "profiles": {
+    "1": {
     "first_name": "Viktory",
     "last_name": "B.",
     "age": 22,
@@ -41,7 +42,7 @@
     "id": "1",
     "avatar": "https://i.imgur.com/g6AWyos.jpg"
   },
-  {
+  "2":{
     "first_name": "Veles",
     "last_name": "Pan",
     "age": 999,
@@ -51,5 +52,5 @@
     "username": "user",
     "id": "2",
     "avatar": "https://i.imgur.com/UvBboIO.jpg"
-  }]
+  }}
 }
