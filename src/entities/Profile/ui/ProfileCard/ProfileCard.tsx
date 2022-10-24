@@ -1,6 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { Button, classNames, Text } from 'shared';
+import React from 'react';
 import { getProfileError } from '../../model/selectors/getProfileError/getProfileError';
 import { getProfileData } from '../../model/selectors/getProfileData/getProfileData';
 import { getProfileLoading } from '../../model/selectors/getProfileLoading/getProfileLoading';
