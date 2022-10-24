@@ -18,7 +18,7 @@ export const loginByUsername = createAsyncThunk<User, LoginByUsernameProps, Thun
       }
 
       dispatch(userActions.setUserData(response.data));
-      extra.navigate('/profile');
+      extra.navigate?.('/profile');
       return response.data;
     } catch (error) {
       console.log(error);

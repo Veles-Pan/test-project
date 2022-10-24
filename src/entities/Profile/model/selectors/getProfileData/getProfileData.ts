@@ -1,8 +1,3 @@
-import { createSelector } from '@reduxjs/toolkit';
-import { ProfileSchema } from '../../types/ProfileSchema';
-import { getProfile } from '../getProfile/getProfile';
+import { StateSchema } from 'app/providers/StoreProvider';
 
-export const getProfileData = createSelector(
-  getProfile,
-  (profile: ProfileSchema) => profile?.profile,
-);
+export const getProfileData = (state: StateSchema) => state?.profile?.profile;

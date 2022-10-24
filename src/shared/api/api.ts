@@ -5,6 +5,6 @@ export const $api = axios.create({
   baseURL: __API__,
   headers: {
     'Content-Type': 'application/json',
-    Authorization: `Bearer ${localStorage.getItem(LOCAL_STORAGE_AUTH)}`,
+    Authorization: `Bearer ${localStorage.getItem(LOCAL_STORAGE_AUTH) || ''}`,
   },
 });

@@ -1,6 +1,6 @@
 import { Reducer } from '@reduxjs/toolkit';
 import { ReduxStoreWithManager, StateSchemaKey } from 'app/providers/StoreProvider';
-import React, {
+import {
   FC, ReactNode, useEffect,
 } from 'react';
 import { useStore } from 'react-redux';
@@ -9,8 +9,6 @@ import { useAppDispatch } from '../../lib/hooks/useAppDispatch';
 export type ReducersList = {
   [name in StateSchemaKey]?: Reducer
 }
-
-type RedusersListEntry = [StateSchemaKey, Reducer]
 
 interface DynamicReducersLoaderProps {
   reducers: ReducersList
@@ -22,14 +20,14 @@ export const DynamicReducersLoader: FC<DynamicReducersLoaderProps> = ({ reducers
   const dispatch = useAppDispatch();
 
   useEffect(() => {
-    Object.entries(reducers).forEach(([name, reducer]: RedusersListEntry) => {
-      store.reducerManager.add(name, reducer);
+    Object.entries(reducers).forEach(([name, reducer]) => {
+      store.reducerManager.add(name as StateSchemaKey, reducer as Reducer);
       dispatch({ type: `${name}/INIT` });
     });
 
     return () => {
-      Object.entries(reducers).forEach(([name, reducer]: RedusersListEntry) => {
-        store.reducerManager.remove(name);
+      Object.entries(reducers).forEach(([name, _]) => {
+        store.reducerManager.remove(name as StateSchemaKey);
         dispatch({ type: `${name}/REMOVE` });
       });
     };

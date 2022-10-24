@@ -6,11 +6,15 @@ describe('classNames', () => {
   });
 
   test('test with additional params', () => {
-    expect(classNames('className', {}, ['classNameAddition1', 'classNameAddition2'])).toBe('className classNameAddition1 classNameAddition2');
+    expect(classNames('className', {}, ['classNameAddition1', 'classNameAddition2']))
+      .toBe('className classNameAddition1 classNameAddition2');
   });
 
   test('test with mods params', () => {
-    expect(classNames('className', { classNameTrue: true, classNameFalse: false }, ['classNameAddition1', 'classNameAddition2']))
+    expect(classNames('className', {
+      classNameTrue: true,
+      classNameFalse: false,
+    }, ['classNameAddition1', 'classNameAddition2']))
       .toBe('className classNameAddition1 classNameAddition2 classNameTrue');
   });
 
