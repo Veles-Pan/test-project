@@ -1,41 +1,76 @@
 import { useTranslation } from 'react-i18next';
-import { useSelector } from 'react-redux';
-import { Button, classNames, Text } from 'shared';
-import React from 'react';
-import { getProfileError } from '../../model/selectors/getProfileError/getProfileError';
-import { getProfileData } from '../../model/selectors/getProfileData/getProfileData';
-import { getProfileLoading } from '../../model/selectors/getProfileLoading/getProfileLoading';
+
+import {
+  classNames, Input, Text, TextThemes,
+} from 'shared';
+import { ContentLoader } from 'widgets/ContentLoader';
 import styles from './ProfileCard.module.scss';
+import { Profile } from '../../model/types/ProfileSchema';
+import { ProfileNetworkBlock } from './ProfileNetworkBlock/ProfileNetworkBlock';
+import { ProfileInfoBlock } from './ProfileInfoBlock/ProfileInfoBlock';
 
 interface ProfileCardProps {
   className?: string
+  data?: Profile
+  formData?: Profile
+  isReadonly?: boolean
+  isLoading?: boolean
+  error?: string
+  onChangeFirstname?: (value: string) => void
+  onChangeLastname?: (value: string) => void
+  onChangeAge?: (value: number) => void
+  onChangeEmail?: (value: string) => void
+  onChangePosition?: (value: string) => void
+  onChangeCity?: (value: string) => void
+  onChangeAvatar?: () => void
 }
 
-export const ProfileCard = ({ className }: ProfileCardProps) => {
+export const ProfileCard = ({
+  className,
+  data,
+  formData,
+  isReadonly = false,
+  isLoading = false,
+  error,
+  onChangeFirstname,
+  onChangeLastname,
+  onChangeAge,
+  onChangeEmail,
+  onChangePosition,
+  onChangeCity,
+  onChangeAvatar,
+}: ProfileCardProps) => {
   const { t } = useTranslation('profile');
-  const data = useSelector(getProfileData);
-  const error = useSelector(getProfileError);
-  const isLoading = useSelector(getProfileLoading);
+
+  if (isLoading) {
+    return (
+      <div className={classNames(styles.loaderContainer, {}, [className])}>
+        <ContentLoader />
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className={classNames(styles.errorContainer, {}, [className])}>
+        <Text theme={TextThemes.ERROR} title={error} />
+      </div>
+    );
+  }
+
   return (
     <div className={classNames(styles.container, {}, [className])}>
-      <div className={styles.info}>
-        <Text title={t('profile-title')} />
-        <Button>{t('profile-edit-button')}</Button>
-      </div>
-
-      <div className={styles.card}>
-        <Text text={`${t('profile-card.first-name')}:`} />
-        <Text text={data?.first_name} />
-
-        <Text text={`${t('profile-card.last-name')}:`} />
-        <Text text={data?.last_name} />
-
-        <Text text={`${t('profile-card.age')}:`} />
-        <Text text={data?.age.toString()} />
-
-        <Text text={`${t('profile-card.country')}:`} />
-        <Text text={data?.country} />
-      </div>
+      <ProfileNetworkBlock onChangeAvatar={onChangeAvatar} isReadonly={isReadonly} data={data} />
+      <ProfileInfoBlock
+        data={formData}
+        isReadonly={isReadonly}
+        onChangeFirstname={onChangeFirstname}
+        onChangeLastname={onChangeLastname}
+        onChangeAge={onChangeAge}
+        onChangeEmail={onChangeEmail}
+        onChangePosition={onChangePosition}
+        onChangeCity={onChangeCity}
+      />
     </div>
   );
 };

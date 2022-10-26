@@ -1,15 +1,17 @@
 import LogoImage from './assets/logo.svg';
 import ToggleArrowImage from './assets/toggle-arrow.svg';
+import EditIcon from './assets/edit.svg';
 
 export { classNames } from './lib/classNames/classNames';
 export { AppLink } from './ui/AppLink/AppLink';
 export { Button, ButtonThemes } from './ui/Button/Button';
 export { Modal } from './ui/Modal/Modal';
-export { Input } from './ui/Input/Input';
+export { Input, InputThemes } from './ui/Input/Input';
 export { Text, TextThemes } from './ui/Text/Text';
 export { Currency, Country } from './constants/common';
 export { DynamicReducersLoader, ReducersList } from './components/DynamicReducersLoader/DynamicReducersLoader';
 export { useAppDispatch } from './lib/hooks/useAppDispatch';
 export { LOCAL_STORAGE_THEME_KEY, LOCAL_STORAGE_AUTH } from './constants/localStorage';
 export { $api } from './api/api';
-export { LogoImage, ToggleArrowImage };
+export { Avatar } from './ui/Avatar/Avatar';
+export { LogoImage, ToggleArrowImage, EditIcon };

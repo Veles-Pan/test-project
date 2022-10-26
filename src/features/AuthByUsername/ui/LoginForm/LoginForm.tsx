@@ -46,7 +46,7 @@ const LoginForm = memo(({ className, onSuccessfulLogin }: LoginFormProps) => {
   }, [dispatch, onSuccessfulLogin, password, username]);
 
   return (
-    <DynamicReducersLoader reducers={initialRedusers}>
+    <DynamicReducersLoader deleteAfterUnmount={false} reducers={initialRedusers}>
       <form className={classNames(styles.form, {}, [className])}>
         <Text title={t('login-form.text')} />
         {loginError && <Text text={loginError} theme={TextThemes.ERROR} />}

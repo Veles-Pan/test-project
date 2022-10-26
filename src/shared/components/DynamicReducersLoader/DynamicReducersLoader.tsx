@@ -13,9 +13,10 @@ export type ReducersList = {
 interface DynamicReducersLoaderProps {
   reducers: ReducersList
   children?: ReactNode
+  deleteAfterUnmount?: boolean
 }
 
-export const DynamicReducersLoader: FC<DynamicReducersLoaderProps> = ({ reducers, children }) => {
+export const DynamicReducersLoader: FC<DynamicReducersLoaderProps> = ({ reducers, deleteAfterUnmount, children }) => {
   const store = useStore() as ReduxStoreWithManager;
   const dispatch = useAppDispatch();
 
@@ -26,11 +27,14 @@ export const DynamicReducersLoader: FC<DynamicReducersLoaderProps> = ({ reducers
     });
 
     return () => {
-      Object.entries(reducers).forEach(([name, _]) => {
-        store.reducerManager.remove(name as StateSchemaKey);
-        dispatch({ type: `${name}/REMOVE` });
-      });
+      if (deleteAfterUnmount) {
+        Object.entries(reducers).forEach(([name, _]) => {
+          store.reducerManager.remove(name as StateSchemaKey);
+          dispatch({ type: `${name}/REMOVE` });
+        });
+      }
     };
+
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 

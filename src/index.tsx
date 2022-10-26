@@ -10,13 +10,14 @@ import { StoreProvider } from 'app/providers/StoreProvider';
 const container = document.getElementById('root') as HTMLElement;
 const root = createRoot(container);
 root.render(
-  <BrowserRouter>
-    <StoreProvider>
+  <StoreProvider>
+    <BrowserRouter>
       <ErrorBoundary>
         <ThemeProvider>
           <App />
         </ThemeProvider>
       </ErrorBoundary>
-    </StoreProvider>
-  </BrowserRouter>,
+    </BrowserRouter>
+  </StoreProvider>,
+
 );

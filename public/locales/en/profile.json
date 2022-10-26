@@ -1,12 +1,15 @@
 {
-    "profile-welcome": "This is profile page",
     "profile-title": "Profile",
     "profile-edit-button": "Edit",
+    "profile-save-button": "Save",
+    "profile-cansel-button": "Cancel",
     "profile-card": {
       "first-name": "First Name",
       "last-name": "Last Name",
       "age": "Age",
-      "country": "Country"
+      "country": "Country",
+      "city": "City",
+      "position": "Position"
     }
 }
   

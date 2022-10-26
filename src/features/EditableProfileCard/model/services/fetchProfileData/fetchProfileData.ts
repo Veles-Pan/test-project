@@ -1,12 +1,14 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { ThunkConfig } from 'app/providers/StoreProvider';
-import { Profile } from '../../types/ProfileSchema';
+import { Profile } from 'entities/Profile';
+import { LOCAL_STORAGE_AUTH } from 'shared';
 
 export const fetchProfileData = createAsyncThunk<Profile, void, ThunkConfig<string>>(
   'profile/fetchProfileData',
-  async (_, { extra, dispatch, rejectWithValue }) => {
+  async (_, { extra, rejectWithValue }) => {
+    const userId = localStorage.getItem(LOCAL_STORAGE_AUTH);
     try {
-      const response = await extra.api.get<Profile>('/profiles/1');
+      const response = await extra.api.get<Profile>(`/profiles/${userId}`);
 
       console.log(response);
 

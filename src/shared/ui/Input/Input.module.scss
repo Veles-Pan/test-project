@@ -5,8 +5,17 @@
   height: 40px;
   padding: 5px 10px;
   font: var(--font-base);
-  background: var(--input-bg-color);
-  color: var(--input-text-color);
   width: 300px;
   max-width: 90%;
+}
+
+.common {
+  background: var(--input-bg-color);
+  color: var(--input-text-color);
+}
+
+.readOnly {
+  background: transparent;
+  color: var(--primary-color);
+  cursor: text;
 }
