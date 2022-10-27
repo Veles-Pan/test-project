@@ -6,4 +6,5 @@ export interface User {
 
 export interface UserSchema {
     user?: User
+    authData?: string
 }

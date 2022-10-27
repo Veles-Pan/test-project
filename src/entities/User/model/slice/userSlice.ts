@@ -8,12 +8,20 @@ export const userSlice = createSlice({
   name: 'user',
   initialState,
   reducers: {
+    initAuthData: (state) => {
+      const user = localStorage.getItem(LOCAL_STORAGE_AUTH);
+      if (user) {
+        state.authData = user;
+      }
+    },
     setUserData: (state, action: PayloadAction<User>) => {
       state.user = action.payload;
+      state.authData = state.user.username;
       localStorage.setItem(LOCAL_STORAGE_AUTH, state.user.username);
     },
     logout: (state) => {
       state.user = undefined;
+      state.authData = undefined;
       localStorage.removeItem(LOCAL_STORAGE_AUTH);
     },
   },

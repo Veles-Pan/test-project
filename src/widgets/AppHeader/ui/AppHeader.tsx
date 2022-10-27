@@ -1,4 +1,4 @@
-import { getUserData, userActions } from 'entities/User';
+import { getUserAuthData, userActions } from 'entities/User';
 import { LoginModal } from 'features/AuthByUsername';
 import {
   memo, useCallback, useEffect, useState,
@@ -19,7 +19,7 @@ interface AppHeaderProps {
 export const AppHeader = ({ className }: AppHeaderProps) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const dispatch = useAppDispatch();
-  const authData = useSelector(getUserData);
+  const authData = useSelector(getUserAuthData);
 
   const { t } = useTranslation();
 
