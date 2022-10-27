@@ -1,7 +1,7 @@
 import { Suspense } from 'react';
 import { Modal } from 'shared';
 import { ContentLoader } from 'widgets/ContentLoader';
-import { EditAvatarAsync as Editavatar } from '../Editavatar/Editavatar.async';
+import { EditAvatarAsync as Editavatar } from '../EditAvatar/EditAvatar.async';
 
 interface LoginModalProps {
   isOpen: boolean
