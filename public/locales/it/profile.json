@@ -9,7 +9,8 @@
       "age": "Età",
       "country": "Paese",
       "city": "Città",
-      "position": "Titolo di lavoro"
+      "position": "Titolo di lavoro",
+      "currency": "Moneta"
     }
 }
   

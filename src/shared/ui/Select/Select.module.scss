@@ -1,0 +1,38 @@
+.selectorWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  background: var(--input-bg-color);
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  height: 40px;
+  padding: 5px 10px 5px 5px;
+}
+
+.readonlyWrapper {
+  background: transparent;
+  padding: 5px 10px;
+}
+
+.select {
+  width: 100%;
+  display: flex;
+  font: var(--font-base);
+  color: var(--input-text-color);
+  outline: none;
+  background-color: transparent;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+
+  &:disabled {
+    color: var(--primary-color);
+    padding: 0;
+    opacity: 1;
+    cursor: text;
+    border: none;
+    appearance: none;
+  }
+}

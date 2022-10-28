@@ -17,20 +17,20 @@ const Template: ComponentStory<typeof AppHeader> = (args) => <AppHeader {...args
 
 export const AppHeaderDefault = Template.bind({});
 AppHeaderDefault.args = {};
-AppHeaderDefault.decorators = [StoreDecorator({ user: { user: undefined } })];
+AppHeaderDefault.decorators = [StoreDecorator({ user: { authData: undefined } })];
 
 export const AppHeaderDark = Template.bind({});
 AppHeaderDark.args = {};
 
-AppHeaderDark.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({ user: { user: undefined } })];
+AppHeaderDark.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({ user: { authData: undefined } })];
 
 export const AppHeaderDefaultWithUser = Template.bind({});
 AppHeaderDefaultWithUser.args = {};
-AppHeaderDefaultWithUser.decorators = [StoreDecorator({ user: { user: { id: 'id', username: 'Test' } } })];
+AppHeaderDefaultWithUser.decorators = [StoreDecorator({ user: { authData: 'Test' } })];
 
 export const AppHeaderDarkWithUser = Template.bind({});
 AppHeaderDarkWithUser.args = {};
 
 AppHeaderDarkWithUser.decorators = [
-  ThemeDecorator(Theme.DARK), StoreDecorator({ user: { user: { id: 'id', username: 'Test' } } }),
+  ThemeDecorator(Theme.DARK), StoreDecorator({ user: { authData: 'Test' } }),
 ];

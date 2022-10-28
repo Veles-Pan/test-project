@@ -9,7 +9,8 @@
       "age": "Age",
       "country": "Country",
       "city": "City",
-      "position": "Position"
+      "position": "Position",
+      "currency": "Currency"
     }
 }
   

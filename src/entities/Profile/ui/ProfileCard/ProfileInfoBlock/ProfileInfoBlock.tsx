@@ -1,7 +1,9 @@
+import { Country, CountrySelect } from 'entities/Country';
+import { Currency, CurrencySelect } from 'entities/Currency';
 import { useTranslation } from 'react-i18next';
 
 import {
-  classNames, Input, Text,
+  classNames, Input, Select, Text,
 } from 'shared';
 import { Profile } from '../../../model/types/ProfileSchema';
 import styles from './ProfileInfoBlock.module.scss';
@@ -16,6 +18,8 @@ interface ProfileInfoBlockProps {
   onChangeEmail?: (value: string) => void
   onChangePosition?: (value: string) => void
   onChangeCity?: (value: string) => void
+  onChangeCountry?: (value: Country) => void
+  onChangeCurrency?: (value: Currency) => void
 }
 
 export const ProfileInfoBlock = ({
@@ -28,6 +32,8 @@ export const ProfileInfoBlock = ({
   onChangeEmail,
   onChangePosition,
   onChangeCity,
+  onChangeCountry,
+  onChangeCurrency,
 }: ProfileInfoBlockProps) => {
   const { t } = useTranslation('profile');
 
@@ -49,10 +55,13 @@ export const ProfileInfoBlock = ({
       <Input onChange={onChangeAge} isReadonly={isReadonly} className={styles.input} value={data?.age} />
 
       <Text text={`${t('profile-card.country')}:`} />
-      <Input isReadonly={isReadonly} className={styles.input} value={data?.country} />
+      <CountrySelect value={data?.country} onChange={onChangeCountry} isReadonly={isReadonly} />
 
       <Text text={`${t('profile-card.city')}:`} />
       <Input onChange={onChangeCity} isReadonly={isReadonly} className={styles.input} value={data?.city} />
+
+      <Text text={`${t('profile-card.currency')}:`} />
+      <CurrencySelect value={data?.currency} onChange={onChangeCurrency} isReadonly={isReadonly} />
     </div>
   );
 };

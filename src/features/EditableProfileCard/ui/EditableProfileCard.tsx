@@ -1,3 +1,5 @@
+import { Country } from 'entities/Country';
+import { Currency } from 'entities/Currency';
 import { ProfileCard } from 'entities/Profile';
 import { useCallback } from 'react';
 import { useSelector } from 'react-redux';
@@ -45,6 +47,14 @@ export const EditableProfileCard = ({ className }: EditableProfileCardProps) => 
   const onChangeCityHandler = useCallback((value: string) => {
     dispatch(profileActions.updateProfile({ city: value }));
   }, [dispatch]);
+
+  const onChangeCountryHandler = useCallback((value: Country) => {
+    dispatch(profileActions.updateProfile({ country: value }));
+  }, [dispatch]);
+
+  const onChangeCurrencyHandler = useCallback((value: Currency) => {
+    dispatch(profileActions.updateProfile({ currency: value }));
+  }, [dispatch]);
   return (
     <ProfileCard
       formData={formData}
@@ -59,6 +69,8 @@ export const EditableProfileCard = ({ className }: EditableProfileCardProps) => 
       onChangeEmail={onChangeEmailHandler}
       onChangePosition={onChangePositionHandler}
       onChangeCity={onChangeCityHandler}
+      onChangeCountry={onChangeCountryHandler}
+      onChangeCurrency={onChangeCurrencyHandler}
     />
   );
 };

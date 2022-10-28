@@ -4,6 +4,8 @@ import {
   classNames, Input, Text, TextThemes,
 } from 'shared';
 import { ContentLoader } from 'widgets/ContentLoader';
+import { Country } from 'entities/Country';
+import { Currency } from 'entities/Currency';
 import styles from './ProfileCard.module.scss';
 import { Profile } from '../../model/types/ProfileSchema';
 import { ProfileNetworkBlock } from './ProfileNetworkBlock/ProfileNetworkBlock';
@@ -23,6 +25,8 @@ interface ProfileCardProps {
   onChangePosition?: (value: string) => void
   onChangeCity?: (value: string) => void
   onChangeAvatar?: () => void
+  onChangeCountry?: (value: Country) => void
+  onChangeCurrency?: (value: Currency) => void
 }
 
 export const ProfileCard = ({
@@ -39,6 +43,8 @@ export const ProfileCard = ({
   onChangePosition,
   onChangeCity,
   onChangeAvatar,
+  onChangeCountry,
+  onChangeCurrency,
 }: ProfileCardProps) => {
   const { t } = useTranslation('profile');
 
@@ -70,6 +76,8 @@ export const ProfileCard = ({
         onChangeEmail={onChangeEmail}
         onChangePosition={onChangePosition}
         onChangeCity={onChangeCity}
+        onChangeCountry={onChangeCountry}
+        onChangeCurrency={onChangeCurrency}
       />
     </div>
   );
