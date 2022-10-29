@@ -8,6 +8,7 @@ export interface SidebarItemProps {
     text: string
     collapsed: boolean
     Icon: FC<SVGProps<SVGSVGElement>>
+    isAuthOnly?: boolean
 }
 
 export const sidebarItems: Omit<SidebarItemProps, 'collapsed'>[] = [
@@ -20,5 +21,6 @@ export const sidebarItems: Omit<SidebarItemProps, 'collapsed'>[] = [
     path: RoutePath.profile,
     text: 'sidebar.profile-page',
     Icon: ProfileIcon,
+    isAuthOnly: true,
   },
 ];
