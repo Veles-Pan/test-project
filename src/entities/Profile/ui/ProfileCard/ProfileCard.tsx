@@ -24,7 +24,6 @@ interface ProfileCardProps {
   onChangeEmail?: (value: string) => void
   onChangePosition?: (value: string) => void
   onChangeCity?: (value: string) => void
-  onChangeAvatar?: () => void
   onChangeCountry?: (value: Country) => void
   onChangeCurrency?: (value: Currency) => void
 }
@@ -42,7 +41,6 @@ export const ProfileCard = ({
   onChangeEmail,
   onChangePosition,
   onChangeCity,
-  onChangeAvatar,
   onChangeCountry,
   onChangeCurrency,
 }: ProfileCardProps) => {
@@ -66,7 +64,7 @@ export const ProfileCard = ({
 
   return (
     <div className={classNames(styles.container, {}, [className])}>
-      <ProfileNetworkBlock onChangeAvatar={onChangeAvatar} isReadonly={isReadonly} data={data} />
+      <ProfileNetworkBlock isReadonly={isReadonly} data={data} />
       <ProfileInfoBlock
         data={formData}
         isReadonly={isReadonly}

@@ -15,7 +15,6 @@ interface ProfileNetworkBlockProps {
   isLoading?: boolean
   isReadonly?: boolean
   error?: string
-  onChangeAvatar?: () => void
 }
 
 export const ProfileNetworkBlock = ({
@@ -24,7 +23,6 @@ export const ProfileNetworkBlock = ({
   isLoading = false,
   isReadonly = true,
   error,
-  onChangeAvatar,
 }: ProfileNetworkBlockProps) => {
   const { t } = useTranslation('profile');
 
@@ -50,12 +48,13 @@ export const ProfileNetworkBlock = ({
         <Avatar alt="avatar" src={data?.avatar} className={styles.avatar} />
       )
         : (
-          <EditableAvatar onChangeAvatar={onChangeAvatar} src={data?.avatar} className={styles.avatar} />
+          <EditableAvatar src={data?.avatar} className={styles.avatar} />
         )}
 
-      <Text title={`${data?.first_name} ${data?.last_name}`} />
-      <Text text={data?.position} />
-      <Text text={`${data?.country}, ${data?.city}`} />
+      {(data?.first_name || data?.last_name) && <Text title={`${data?.first_name || ''} ${data?.last_name || ''}`} />}
+      {data?.position && <Text title={data?.position} />}
+      {data?.country && <Text text={`${data?.country} ${data?.city ? `, ${data.city}` : ''}`} />}
+
     </div>
   );
 };

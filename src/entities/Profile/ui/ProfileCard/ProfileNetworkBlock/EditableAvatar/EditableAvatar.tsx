@@ -1,4 +1,4 @@
-import { EditAvatarModal } from 'features/EditableProfileCard/ui/EditAvatarModile/EditAvatarModal';
+import { EditAvatarModal } from 'features/EditableProfileCard';
 import { useCallback, useState } from 'react';
 import { EditIcon, Avatar, classNames } from 'shared';
 import styles from './EditableAvatar.module.scss';
@@ -6,10 +6,9 @@ import styles from './EditableAvatar.module.scss';
 interface EditableAvatarProps {
   className?: string
   src?: string
-  onChangeAvatar?: () => void
 }
 
-export const EditableAvatar = ({ className, src, onChangeAvatar }: EditableAvatarProps) => {
+export const EditableAvatar = ({ className, src }: EditableAvatarProps) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const openModal = useCallback(() => {

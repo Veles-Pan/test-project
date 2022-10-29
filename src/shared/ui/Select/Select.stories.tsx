@@ -40,5 +40,5 @@ Readonly.args = {
     { value: '1', content: 'Option 1' },
     { value: '2', content: 'Option 2' },
   ],
-  isReadOnly: true,
+  isReadonly: true,
 };
