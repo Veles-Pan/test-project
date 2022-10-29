@@ -5,7 +5,7 @@ import {
   Button, classNames, Input, useAppDispatch,
 } from 'shared';
 import { getProfileFormData, updateProfileData } from 'features/EditableProfileCard';
-import { profileActions } from '../../model/slice/profileSlice';
+import { profileActions } from '../../model/slice/ProfileSlice';
 import styles from './EditAvatar.module.scss';
 
 export interface EditAvatarProps {
@@ -20,7 +20,7 @@ const EditAvatar = memo(({ className, onClose }: EditAvatarProps) => {
   const formData = useSelector(getProfileFormData);
 
   const onChangeAvatarHandler = useCallback((value: string) => {
-    dispatch(profileActions.updateProfile({ avatar: value }));
+    dispatch(profileActions.updateForm({ avatar: value }));
   }, [dispatch]);
 
   const onSaveHandler = useCallback(() => {

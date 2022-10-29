@@ -8,14 +8,14 @@ const initialState: ProfileSchema = {
   isLoading: false,
 };
 
-export const profileSlice = createSlice({
+export const ProfileSlice = createSlice({
   name: 'profile',
   initialState,
   reducers: {
     setReadonly: (state, action: PayloadAction<boolean>) => {
       state.readonly = action.payload;
     },
-    updateProfile: (state, action: PayloadAction<Profile>) => {
+    updateForm: (state, action: PayloadAction<Profile>) => {
       state.form = {
         ...state.form,
         ...action.payload,
@@ -60,5 +60,5 @@ export const profileSlice = createSlice({
   },
 });
 
-export const { actions: profileActions } = profileSlice;
-export const { reducer: profileReducer } = profileSlice;
+export const { actions: profileActions } = ProfileSlice;
+export const { reducer: profileReducer } = ProfileSlice;

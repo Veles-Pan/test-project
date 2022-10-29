@@ -9,7 +9,7 @@ import { getProfileError } from '../model/selectors/getProfileError/getProfileEr
 import { getProfileFormData } from '../model/selectors/getProfileFormData/getProfileFormData';
 import { getProfileLoading } from '../model/selectors/getProfileLoading/getProfileLoading';
 import { getProfileReadonly } from '../model/selectors/getProfileReadonly/getProfileReadonly';
-import { profileActions } from '../model/slice/profileSlice';
+import { profileActions } from '../model/slice/ProfileSlice';
 
 interface EditableProfileCardProps {
   className?: string
@@ -25,35 +25,35 @@ export const EditableProfileCard = ({ className }: EditableProfileCardProps) => 
   const error = useSelector(getProfileError);
 
   const onChangeFirstnameHandler = useCallback((value: string) => {
-    dispatch(profileActions.updateProfile({ first_name: value }));
+    dispatch(profileActions.updateForm({ first_name: value }));
   }, [dispatch]);
 
   const onChangeLastnameHandler = useCallback((value: string) => {
-    dispatch(profileActions.updateProfile({ last_name: value }));
+    dispatch(profileActions.updateForm({ last_name: value }));
   }, [dispatch]);
 
   const onChangeAgeHandler = useCallback((value: number) => {
-    dispatch(profileActions.updateProfile({ age: value }));
+    dispatch(profileActions.updateForm({ age: value }));
   }, [dispatch]);
 
   const onChangeEmailHandler = useCallback((value: string) => {
-    dispatch(profileActions.updateProfile({ email: value }));
+    dispatch(profileActions.updateForm({ email: value }));
   }, [dispatch]);
 
   const onChangePositionHandler = useCallback((value: string) => {
-    dispatch(profileActions.updateProfile({ position: value }));
+    dispatch(profileActions.updateForm({ position: value }));
   }, [dispatch]);
 
   const onChangeCityHandler = useCallback((value: string) => {
-    dispatch(profileActions.updateProfile({ city: value }));
+    dispatch(profileActions.updateForm({ city: value }));
   }, [dispatch]);
 
   const onChangeCountryHandler = useCallback((value: Country) => {
-    dispatch(profileActions.updateProfile({ country: value }));
+    dispatch(profileActions.updateForm({ country: value }));
   }, [dispatch]);
 
   const onChangeCurrencyHandler = useCallback((value: Currency) => {
-    dispatch(profileActions.updateProfile({ currency: value }));
+    dispatch(profileActions.updateForm({ currency: value }));
   }, [dispatch]);
   return (
     <ProfileCard
