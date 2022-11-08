@@ -1,27 +1,24 @@
 import { EditableProfileCard, fetchProfileData, profileReducer } from 'features/EditableProfileCard';
-import { useCallback, useEffect } from 'react';
-import { useTranslation } from 'react-i18next';
-import { useSelector } from 'react-redux';
+import { useEffect } from 'react';
 import {
-  Button,
-  DynamicReducersLoader, ReducersList, Text, useAppDispatch,
+  DynamicReducersLoader, ReducersList, useAppDispatch,
 } from 'shared';
-import styles from './ProfilePage.module.scss';
 import { ProfilePageHeader } from './ProfilePageHeader/ProfilePageHeader';
 
 const reducers: ReducersList = { profile: profileReducer };
 
 const ProfilePage = () => {
-  const { t } = useTranslation('profile');
   const dispatch = useAppDispatch();
 
   useEffect(() => {
-    dispatch(fetchProfileData());
+    if (__PROJECT__ !== 'storybook') {
+      dispatch(fetchProfileData());
+    }
   }, [dispatch]);
 
   return (
     <DynamicReducersLoader reducers={reducers}>
-      <div className="container">
+      <div>
         <ProfilePageHeader />
         <EditableProfileCard />
       </div>

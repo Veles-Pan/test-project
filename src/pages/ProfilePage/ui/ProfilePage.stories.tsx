@@ -15,11 +15,37 @@ export default {
 
 const Template: ComponentStory<typeof ProfilePage> = () => <ProfilePage />;
 
+const testFormData = {
+  first_name: 'John',
+  last_name: 'Doe',
+  age: 30,
+  email: 'email@example.com',
+};
+
 export const ProfilePageDefault = Template.bind({});
 ProfilePageDefault.args = {};
-ProfilePageDefault.decorators = [StoreDecorator({ counter: { value: 100 } })];
+ProfilePageDefault.decorators = [
+  StoreDecorator({ profile: { form: testFormData, readonly: true } }),
+];
 
 export const ProfilePageDark = Template.bind({});
 ProfilePageDark.args = {};
 
-ProfilePageDark.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({ counter: { value: 100 } })];
+ProfilePageDark.decorators = [
+  ThemeDecorator(Theme.DARK),
+  StoreDecorator({ profile: { form: testFormData, readonly: true } }),
+];
+
+export const ProfilePageEditableDefault = Template.bind({});
+ProfilePageEditableDefault.args = {};
+ProfilePageEditableDefault.decorators = [
+  StoreDecorator({ profile: { form: testFormData, readonly: false } }),
+];
+
+export const ProfilePageEditableDark = Template.bind({});
+ProfilePageEditableDark.args = {};
+
+ProfilePageEditableDark.decorators = [
+  ThemeDecorator(Theme.DARK),
+  StoreDecorator({ profile: { form: testFormData, readonly: false } }),
+];
