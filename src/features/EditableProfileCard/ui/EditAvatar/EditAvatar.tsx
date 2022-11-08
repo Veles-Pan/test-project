@@ -4,7 +4,8 @@ import { useSelector } from 'react-redux';
 import {
   Button, classNames, Input, useAppDispatch,
 } from 'shared';
-import { getProfileFormData, updateProfileData } from 'features/EditableProfileCard';
+import { getProfileFormData } from '../../model/selectors/getProfileFormData/getProfileFormData';
+import { updateProfileData } from '../../model/services/updateProfileData/updateProfileData';
 import { profileActions } from '../../model/slice/ProfileSlice';
 import styles from './EditAvatar.module.scss';
 
