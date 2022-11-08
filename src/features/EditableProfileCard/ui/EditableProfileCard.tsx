@@ -9,6 +9,7 @@ import { getProfileError } from '../model/selectors/getProfileError/getProfileEr
 import { getProfileFormData } from '../model/selectors/getProfileFormData/getProfileFormData';
 import { getProfileLoading } from '../model/selectors/getProfileLoading/getProfileLoading';
 import { getProfileReadonly } from '../model/selectors/getProfileReadonly/getProfileReadonly';
+import { getProfileValidationErrors } from '../model/selectors/getProfileValidateErrors/getProfileValidationErrors';
 import { profileActions } from '../model/slice/ProfileSlice';
 
 interface EditableProfileCardProps {
@@ -23,6 +24,7 @@ export const EditableProfileCard = ({ className }: EditableProfileCardProps) => 
   const isReadonly = useSelector(getProfileReadonly);
   const isLoading = useSelector(getProfileLoading);
   const error = useSelector(getProfileError);
+  const validationErrors = useSelector(getProfileValidationErrors);
 
   const onChangeFirstnameHandler = useCallback((value: string) => {
     dispatch(profileActions.updateForm({ first_name: value }));
@@ -62,6 +64,7 @@ export const EditableProfileCard = ({ className }: EditableProfileCardProps) => 
       isLoading={isLoading}
       isReadonly={isReadonly}
       error={error}
+      validationErrors={validationErrors}
       className={className}
       onChangeFirstname={onChangeFirstnameHandler}
       onChangeLastname={onChangeLastnameHandler}

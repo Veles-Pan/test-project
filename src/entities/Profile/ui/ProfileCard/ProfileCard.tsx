@@ -7,7 +7,7 @@ import { ContentLoader } from 'widgets/ContentLoader';
 import { Country } from 'entities/Country';
 import { Currency } from 'entities/Currency';
 import styles from './ProfileCard.module.scss';
-import { Profile } from '../../model/types/ProfileSchema';
+import { Profile, ValidateProfileError } from '../../model/types/ProfileSchema';
 import { ProfileNetworkBlock } from './ProfileNetworkBlock/ProfileNetworkBlock';
 import { ProfileInfoBlock } from './ProfileInfoBlock/ProfileInfoBlock';
 
@@ -18,6 +18,7 @@ interface ProfileCardProps {
   isReadonly?: boolean
   isLoading?: boolean
   error?: string
+  validationErrors?: ValidateProfileError[]
   onChangeFirstname?: (value: string) => void
   onChangeLastname?: (value: string) => void
   onChangeAge?: (value: number) => void
@@ -35,6 +36,7 @@ export const ProfileCard = ({
   isReadonly = false,
   isLoading = false,
   error,
+  validationErrors,
   onChangeFirstname,
   onChangeLastname,
   onChangeAge,
@@ -68,6 +70,7 @@ export const ProfileCard = ({
       <ProfileInfoBlock
         data={formData}
         isReadonly={isReadonly}
+        validationErrors={validationErrors}
         onChangeFirstname={onChangeFirstname}
         onChangeLastname={onChangeLastname}
         onChangeAge={onChangeAge}

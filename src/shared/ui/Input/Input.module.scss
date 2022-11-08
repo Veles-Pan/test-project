@@ -9,9 +9,14 @@
   max-width: 90%;
 }
 
-.common {
+.common,
+.error {
   background: var(--input-bg-color);
   color: var(--input-text-color);
+}
+
+.error {
+  border: 2px solid var(--error-text-color);
 }
 
 .readOnly {

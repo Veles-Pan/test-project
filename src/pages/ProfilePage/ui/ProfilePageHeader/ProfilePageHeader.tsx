@@ -1,5 +1,5 @@
 import { getProfileReadonly, profileActions, updateProfileData } from 'features/EditableProfileCard';
-import { useCallback } from 'react';
+import { useCallback, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import {
@@ -20,7 +20,6 @@ export const ProfilePageHeader = () => {
 
   const onSaveHandler = useCallback(() => {
     dispatch(updateProfileData());
-    dispatch(profileActions.cancelEdittingProfile());
   }, [dispatch]);
 
   const onCancelHandler = useCallback(() => {

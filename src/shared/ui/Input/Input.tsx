@@ -9,6 +9,7 @@ type HTMLInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onC
 
 export enum InputThemes {
   COMMON = 'common',
+  ERROR = 'error',
 }
 
 interface InputProps extends HTMLInputProps {
