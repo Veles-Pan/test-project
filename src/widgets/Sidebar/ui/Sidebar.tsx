@@ -1,20 +1,19 @@
-import { useState } from 'react';
-import { useTranslation } from 'react-i18next';
+import { memo, useState } from 'react';
 import {
-  AppLink, Button, classNames, ToggleArrowImage,
+  Button, classNames, ToggleArrowImage,
 } from 'shared';
 import { ButtonThemes } from 'shared/ui/Button/Button';
 import { LanguageSwitcher } from 'widgets/LanguageSwitcher';
-import CounterIcon from 'shared/assets/counter.svg';
 import styles from './Sidebar.module.scss';
+import { SidebarItem } from './SidebarItem/SidebarItem';
+import { sidebarItems } from '../model/items';
 
 interface SidebarProps {
   className?: string
 }
 
-export const Sidebar = ({ className }: SidebarProps) => {
+export const Sidebar = memo(({ className }: SidebarProps) => {
   const [isOpen, setIsOpen] = useState(false);
-  const { t } = useTranslation();
 
   const toggleSidebar = () => {
     setIsOpen((prev) => !prev);
@@ -42,12 +41,11 @@ export const Sidebar = ({ className }: SidebarProps) => {
           isOpen={isOpen}
           className={classNames(styles.langSwitcher)}
         />
-        <AppLink className={`link ${styles.item}`} to="/counter">
-          <CounterIcon className={styles.counterIcon} />
-          <div className={styles.counterText}>{t('sidebar.counter-page')}</div>
-        </AppLink>
+        {sidebarItems.map((item) => (
+          <SidebarItem key={item.path} {...item} collapsed={!isOpen} />
+        ))}
 
       </div>
     </div>
   );
-};
+});

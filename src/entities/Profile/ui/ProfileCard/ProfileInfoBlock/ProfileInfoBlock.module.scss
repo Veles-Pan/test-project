@@ -1,0 +1,18 @@
+.container {
+  padding: 20px;
+  height: 100%;
+  max-width: 63vw;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(4, 40px);
+  gap: 8px;
+  background-color: var(--bg-secondary-color);
+  border-radius: 20px;
+}
+
+.input {
+  width: 100%;
+  max-width: 40vw;
+}

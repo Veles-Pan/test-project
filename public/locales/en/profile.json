@@ -1,0 +1,16 @@
+{
+    "profile-title": "Profile",
+    "profile-edit-button": "Edit",
+    "profile-save-button": "Save",
+    "profile-cansel-button": "Cancel",
+    "profile-card": {
+      "first-name": "First Name",
+      "last-name": "Last Name",
+      "age": "Age",
+      "country": "Country",
+      "city": "City",
+      "position": "Position",
+      "currency": "Currency"
+    }
+}
+  

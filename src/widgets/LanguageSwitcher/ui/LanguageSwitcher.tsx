@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Button, classNames } from 'shared';
 import styles from './LanguageSwitcher.module.scss';
@@ -7,7 +8,7 @@ interface LanguageSwitcherProps {
   isOpen?: boolean
 }
 
-export const LanguageSwitcher = ({
+export const LanguageSwitcher = memo(({
   className,
   isOpen,
 }: LanguageSwitcherProps) => {
@@ -36,4 +37,4 @@ export const LanguageSwitcher = ({
       />
     </Button>
   );
-};
+});

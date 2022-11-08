@@ -8,6 +8,8 @@ import { BuildOptions } from './types/config';
 export const buildPlugins = ({
   paths,
   isDevelopment,
+  apiUrl,
+  project,
 }: BuildOptions): webpack.WebpackPluginInstance[] => {
   const plugins = [
     new HtmlWebpackPlugin({
@@ -20,6 +22,8 @@ export const buildPlugins = ({
     }),
     new webpack.DefinePlugin({
       __IS_DEV__: JSON.stringify(isDevelopment),
+      __API__: JSON.stringify(apiUrl),
+      __PROJECT__: JSON.stringify(project),
     }),
     new ReactRefreshWebpackPlugin(),
   ];

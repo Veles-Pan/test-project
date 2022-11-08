@@ -1,0 +1,16 @@
+{
+    "profile-title": "Profilo",
+    "profile-edit-button": "Modificare",
+    "profile-save-button": "Salva",
+    "profile-cansel-button": "Annulla",
+    "profile-card": {
+      "first-name": "Nome di battesimo",
+      "last-name": "Cognome",
+      "age": "Età",
+      "country": "Paese",
+      "city": "Città",
+      "position": "Titolo di lavoro",
+      "currency": "Moneta"
+    }
+}
+  

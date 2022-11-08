@@ -2,7 +2,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { Theme } from 'app/providers/ThemeProvider/lib/ThemeContext';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator';
 
-import { Input } from './Input';
+import { Input, InputThemes } from './Input';
 
 export default {
   title: 'shared/Input',
@@ -35,3 +35,9 @@ DarkWithPlaceholder.args = {
   placeholder: 'Test Placeholder',
 };
 DarkWithPlaceholder.decorators = [ThemeDecorator(Theme.DARK)];
+
+export const CommonWithError = Template.bind({});
+CommonWithError.args = {
+  value: 'Test Value',
+  theme: InputThemes.ERROR,
+};

@@ -30,7 +30,7 @@ module.exports = {
     'import/extensions': 'off',
     'import/no-extraneous-dependencies': 'off',
     'no-underscore-dangle': 'off',
-    'no-undef': 'warn',
+    'no-undef': 'off',
     'linebreak-style': ['warn', 'windows'],
     'jsx-a11y/no-static-element-interactions': 'off',
     'jsx-a11y/click-events-have-key-events': 'off',
@@ -41,5 +41,7 @@ module.exports = {
   },
   globals: {
     __IS_DEV__: true,
+    __API__: true,
+    __PROJECT__: true,
   },
 };

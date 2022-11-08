@@ -1,6 +1,8 @@
-import { getUserData, userActions } from 'entities/User';
+import { getUserAuthData, userActions } from 'entities/User';
 import { LoginModal } from 'features/AuthByUsername';
-import { useCallback, useState } from 'react';
+import {
+  memo, useCallback, useEffect, useState,
+} from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import {
@@ -17,7 +19,7 @@ interface AppHeaderProps {
 export const AppHeader = ({ className }: AppHeaderProps) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const dispatch = useAppDispatch();
-  const authData = useSelector(getUserData);
+  const authData = useSelector(getUserAuthData);
 
   const { t } = useTranslation();
 

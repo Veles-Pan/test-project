@@ -30,5 +30,45 @@
       "password": "123"
     }
   ],
-  "profile": { "name": "typicode" }
+  "profiles": [
+    {
+      "first_name": "Viktory",
+      "last_name": "B.",
+      "age": 22,
+      "position": "Frontend Developer",
+      "email": "forvelespan@gmail.com",
+      "currency": "EUR",
+      "country": "Portugal",
+      "city": "Porto",
+      "username": "admin",
+      "id": "admin",
+      "avatar": "https://i.imgur.com/g6AWyos.jpg"
+    },
+    {
+      "first_name": "Veles",
+      "last_name": "Pan",
+      "age": 999,
+      "position": "Frontend Developer",
+      "email": "forvelespan@gmail.com",
+      "currency": "EUR",
+      "country": "Portugal",
+      "city": "Porto",
+      "username": "user",
+      "id": "user",
+      "avatar": "https://i.imgur.com/UvBboIO.jpg"
+    }
+  ],
+  "profile": {
+    "first_name": "Viktory",
+    "last_name": "B.",
+    "age": 22,
+    "position": "Frontend Developer",
+    "email": "forvelespan@gmail.com",
+    "currency": "EUR",
+    "country": "Portugal",
+    "city": "Porto",
+    "username": "admin",
+    "id": "1",
+    "avatar": "https://i.imgur.com/g6AWyos.jpg"
+  }
 }
