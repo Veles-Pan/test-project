@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import {
   Button,
+  ButtonThemes,
   Text,
   useAppDispatch,
 } from 'shared';
@@ -35,7 +36,7 @@ export const ProfilePageHeader = () => {
         : (
           <>
             <Button onClick={onSaveHandler}>{t('profile-save-button')}</Button>
-            <Button onClick={onCancelHandler}>{t('profile-cansel-button')}</Button>
+            <Button theme={ButtonThemes.CANCEL} onClick={onCancelHandler}>{t('profile-cansel-button')}</Button>
           </>
         )}
 
