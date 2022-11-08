@@ -1,6 +1,6 @@
 import { Country } from 'entities/Country';
 import { Currency } from 'entities/Currency';
-import { Profile } from 'entities/Profile';
+import { Profile, ValidateProfileError } from 'entities/Profile';
 import { TestAsyncThunk } from 'shared/lib/tests/TestAsyncThunk/TestAsyncThunk';
 import { updateProfileData } from './updateProfileData';
 
@@ -34,14 +34,37 @@ describe('updateProfileData', () => {
     expect(result.payload).toEqual(data);
   });
 
-  test('error update', async () => {
-    const thunk = new TestAsyncThunk(updateProfileData);
+  test('data error update', async () => {
+    const thunk = new TestAsyncThunk(updateProfileData, {
+      profile: {
+        form: {
+          ...data, first_name: '', last_name: '', email: '',
+        },
+      },
+    });
+
+    thunk.api.put.mockReturnValue(Promise.resolve({ data }));
+    const result = await thunk.callThunk();
+
+    expect(result.meta.requestStatus).toBe('rejected');
+    expect(result.payload).toEqual([
+      ValidateProfileError.EMAIL_REQUIRED,
+      ValidateProfileError.FIRST_NAME_REQUIRED,
+      ValidateProfileError.LAST_NAME_REQUIRED,
+    ]);
+  });
+
+  test('server error update', async () => {
+    const thunk = new TestAsyncThunk(updateProfileData, {
+      profile: {
+        form: data,
+      },
+    });
 
     thunk.api.put.mockReturnValue(Promise.resolve({ status: 403 }));
     const result = await thunk.callThunk();
 
-    expect(thunk.api.put).toHaveBeenCalled();
     expect(result.meta.requestStatus).toBe('rejected');
-    expect(result.payload).toBe('Error with updating profile data');
+    expect(result.payload).toEqual([ValidateProfileError.SERVER_ERROR]);
   });
 });
