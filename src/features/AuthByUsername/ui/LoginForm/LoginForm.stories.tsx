@@ -23,6 +23,10 @@ export const Dark = Template.bind({});
 Dark.args = {};
 Dark.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({ login: {} })];
 
+export const Blue = Template.bind({});
+Blue.args = {};
+Blue.decorators = [ThemeDecorator(Theme.BLUE), StoreDecorator({ login: {} })];
+
 export const CommonWithData = Template.bind({});
 CommonWithData.args = {};
 CommonWithData.decorators = [StoreDecorator({ login: { username: 'TestName', password: '12345' } })];
@@ -40,6 +44,13 @@ CommonWithErrorDark.decorators = [
   StoreDecorator({ login: { username: 'TestName', password: '12345', error: 'Error message' } }),
 ];
 
+export const CommonWithErrorBlue = Template.bind({});
+CommonWithErrorBlue.args = {};
+CommonWithErrorBlue.decorators = [
+  ThemeDecorator(Theme.BLUE),
+  StoreDecorator({ login: { username: 'TestName', password: '12345', error: 'Error message' } }),
+];
+
 export const CommonWithLoading = Template.bind({});
 CommonWithLoading.args = {};
 CommonWithLoading.decorators = [
@@ -50,5 +61,12 @@ export const CommonWithLoadingDark = Template.bind({});
 CommonWithLoadingDark.args = {};
 CommonWithLoadingDark.decorators = [
   ThemeDecorator(Theme.DARK),
+  StoreDecorator({ login: { username: 'TestName', password: '12345', isLoading: true } }),
+];
+
+export const CommonWithLoadingBlue = Template.bind({});
+CommonWithLoadingBlue.args = {};
+CommonWithLoadingBlue.decorators = [
+  ThemeDecorator(Theme.BLUE),
   StoreDecorator({ login: { username: 'TestName', password: '12345', isLoading: true } }),
 ];

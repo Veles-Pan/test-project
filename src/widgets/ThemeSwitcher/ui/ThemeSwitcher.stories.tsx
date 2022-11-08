@@ -14,10 +14,15 @@ export default {
 
 const Template: ComponentStory<typeof ThemeSwitcher> = (args) => <ThemeSwitcher {...args} />;
 
-export const ThemeSwitcherDefault = Template.bind({});
-ThemeSwitcherDefault.args = {};
+export const Default = Template.bind({});
+Default.args = {};
 
-export const ThemeSwitcherDark = Template.bind({});
-ThemeSwitcherDark.args = {};
+export const Dark = Template.bind({});
+Dark.args = {};
 
-ThemeSwitcherDark.decorators = [ThemeDecorator(Theme.DARK)];
+Dark.decorators = [ThemeDecorator(Theme.DARK)];
+
+export const Blue = Template.bind({});
+Blue.args = {};
+
+Blue.decorators = [ThemeDecorator(Theme.BLUE)];

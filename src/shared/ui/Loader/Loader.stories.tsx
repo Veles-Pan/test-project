@@ -14,12 +14,18 @@ export default {
 
 const Template: ComponentStory<typeof Loader> = (args) => <Loader {...args} />;
 
-export const LoaderDefault = Template.bind({});
-LoaderDefault.args = {
+export const Default = Template.bind({});
+Default.args = {
 };
 
-export const LoaderDark = Template.bind({});
-LoaderDark.args = {
+export const Dark = Template.bind({});
+Dark.args = {
 
 };
-LoaderDark.decorators = [ThemeDecorator(Theme.DARK)];
+Dark.decorators = [ThemeDecorator(Theme.DARK)];
+
+export const Blue = Template.bind({});
+Blue.args = {
+
+};
+Blue.decorators = [ThemeDecorator(Theme.BLUE)];

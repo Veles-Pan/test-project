@@ -14,10 +14,15 @@ export default {
 
 const Template: ComponentStory<typeof MainPage> = () => <MainPage />;
 
-export const MainPageDefault = Template.bind({});
-MainPageDefault.args = {};
+export const Default = Template.bind({});
+Default.args = {};
 
-export const MainPageDark = Template.bind({});
-MainPageDark.args = {};
+export const Dark = Template.bind({});
+Dark.args = {};
 
-MainPageDark.decorators = [ThemeDecorator(Theme.DARK)];
+Dark.decorators = [ThemeDecorator(Theme.DARK)];
+
+export const Blue = Template.bind({});
+Blue.args = {};
+
+Blue.decorators = [ThemeDecorator(Theme.BLUE)];

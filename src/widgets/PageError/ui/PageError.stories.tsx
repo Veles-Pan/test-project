@@ -14,12 +14,16 @@ export default {
 
 const Template: ComponentStory<typeof PageError> = (args) => <PageError {...args} />;
 
-export const PageErrorDefault = Template.bind({});
-PageErrorDefault.args = {
+export const Default = Template.bind({});
+Default.args = {
 };
 
-export const PageErrorDark = Template.bind({});
-PageErrorDark.args = {
-
+export const Dark = Template.bind({});
+Dark.args = {
 };
-PageErrorDark.decorators = [ThemeDecorator(Theme.DARK)];
+Dark.decorators = [ThemeDecorator(Theme.DARK)];
+
+export const Blue = Template.bind({});
+Blue.args = {
+};
+Blue.decorators = [ThemeDecorator(Theme.BLUE)];

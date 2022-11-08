@@ -20,12 +20,19 @@ Common.args = {
   text: 'Text',
 };
 
-export const CommonDark = Template.bind({});
-CommonDark.args = {
+export const Dark = Template.bind({});
+Dark.args = {
   title: 'Title',
   text: 'Text',
 };
-CommonDark.decorators = [ThemeDecorator(Theme.DARK)];
+Dark.decorators = [ThemeDecorator(Theme.DARK)];
+
+export const Blue = Template.bind({});
+Blue.args = {
+  title: 'Title',
+  text: 'Text',
+};
+Blue.decorators = [ThemeDecorator(Theme.BLUE)];
 
 export const OnlyTitle = Template.bind({});
 OnlyTitle.args = {
@@ -44,10 +51,18 @@ CommonError.args = {
   theme: TextThemes.ERROR,
 };
 
-export const CommonDarkError = Template.bind({});
-CommonDarkError.args = {
+export const DarkError = Template.bind({});
+DarkError.args = {
   title: 'Title',
   text: 'Text',
   theme: TextThemes.ERROR,
 };
-CommonDarkError.decorators = [ThemeDecorator(Theme.DARK)];
+DarkError.decorators = [ThemeDecorator(Theme.DARK)];
+
+export const BlueError = Template.bind({});
+BlueError.args = {
+  title: 'Title',
+  text: 'Text',
+  theme: TextThemes.ERROR,
+};
+BlueError.decorators = [ThemeDecorator(Theme.BLUE)];

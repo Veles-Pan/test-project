@@ -14,12 +14,16 @@ export default {
 
 const Template: ComponentStory<typeof NavBar> = (args) => <NavBar {...args} />;
 
-export const NavBarDefault = Template.bind({});
-NavBarDefault.args = {
+export const Default = Template.bind({});
+Default.args = {
 };
 
-export const NavBarDark = Template.bind({});
-NavBarDark.args = {
-
+export const Dark = Template.bind({});
+Dark.args = {
 };
-NavBarDark.decorators = [ThemeDecorator(Theme.DARK)];
+Dark.decorators = [ThemeDecorator(Theme.DARK)];
+
+export const Blue = Template.bind({});
+Blue.args = {
+};
+Blue.decorators = [ThemeDecorator(Theme.BLUE)];

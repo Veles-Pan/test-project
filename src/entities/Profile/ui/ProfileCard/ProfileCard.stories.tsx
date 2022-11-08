@@ -15,8 +15,8 @@ export default {
 
 const Template: ComponentStory<typeof ProfileCard> = (args) => <ProfileCard {...args} />;
 
-export const ProfileCardDefault = Template.bind({});
-ProfileCardDefault.args = {
+export const Default = Template.bind({});
+Default.args = {
   isReadonly: true,
   data: {
     first_name: 'John', country: Country.USA, age: 34,
@@ -26,8 +26,8 @@ ProfileCardDefault.args = {
   },
 };
 
-export const ProfileCardDark = Template.bind({});
-ProfileCardDark.args = {
+export const Dark = Template.bind({});
+Dark.args = {
   isReadonly: true,
   data: {
     first_name: 'John', country: Country.USA, age: 34,
@@ -37,10 +37,11 @@ ProfileCardDark.args = {
   },
 };
 
-ProfileCardDark.decorators = [ThemeDecorator(Theme.DARK)];
+Dark.decorators = [ThemeDecorator(Theme.DARK)];
 
-export const ProfileCardEditable = Template.bind({});
-ProfileCardEditable.args = {
+export const Blue = Template.bind({});
+Blue.args = {
+  isReadonly: true,
   data: {
     first_name: 'John', country: Country.USA, age: 34,
   },
@@ -49,8 +50,10 @@ ProfileCardEditable.args = {
   },
 };
 
-export const ProfileCardDarkEditable = Template.bind({});
-ProfileCardDarkEditable.args = {
+Blue.decorators = [ThemeDecorator(Theme.BLUE)];
+
+export const Editable = Template.bind({});
+Editable.args = {
   data: {
     first_name: 'John', country: Country.USA, age: 34,
   },
@@ -59,4 +62,26 @@ ProfileCardDarkEditable.args = {
   },
 };
 
-ProfileCardDarkEditable.decorators = [ThemeDecorator(Theme.DARK)];
+export const DarkEditable = Template.bind({});
+DarkEditable.args = {
+  data: {
+    first_name: 'John', country: Country.USA, age: 34,
+  },
+  formData: {
+    first_name: 'John', country: Country.USA, age: 34,
+  },
+};
+
+DarkEditable.decorators = [ThemeDecorator(Theme.DARK)];
+
+export const BlueEditable = Template.bind({});
+BlueEditable.args = {
+  data: {
+    first_name: 'John', country: Country.USA, age: 34,
+  },
+  formData: {
+    first_name: 'John', country: Country.USA, age: 34,
+  },
+};
+
+BlueEditable.decorators = [ThemeDecorator(Theme.BLUE)];

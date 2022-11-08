@@ -15,30 +15,46 @@ export default {
 
 const Template: ComponentStory<typeof ProfilePageHeader> = () => <ProfilePageHeader />;
 
-export const ProfilePageHeaderDefault = Template.bind({});
-ProfilePageHeaderDefault.args = {};
-ProfilePageHeaderDefault.decorators = [
+export const Default = Template.bind({});
+Default.args = {};
+Default.decorators = [
   StoreDecorator({ profile: { readonly: true } }),
 ];
 
-export const ProfilePageHeaderDark = Template.bind({});
-ProfilePageHeaderDark.args = {};
+export const Dark = Template.bind({});
+Dark.args = {};
 
-ProfilePageHeaderDark.decorators = [
+Dark.decorators = [
   ThemeDecorator(Theme.DARK),
   StoreDecorator({ profile: { readonly: true } }),
 ];
 
-export const ProfilePageHeaderEditableDefault = Template.bind({});
-ProfilePageHeaderEditableDefault.args = {};
-ProfilePageHeaderEditableDefault.decorators = [
+export const Blue = Template.bind({});
+Blue.args = {};
+
+Blue.decorators = [
+  ThemeDecorator(Theme.BLUE),
+  StoreDecorator({ profile: { readonly: true } }),
+];
+
+export const EditableDefault = Template.bind({});
+EditableDefault.args = {};
+EditableDefault.decorators = [
   StoreDecorator({ profile: { readonly: false } }),
 ];
 
-export const ProfilePageHeaderEditableDark = Template.bind({});
-ProfilePageHeaderEditableDark.args = {};
+export const EditableDark = Template.bind({});
+EditableDark.args = {};
 
-ProfilePageHeaderEditableDark.decorators = [
+EditableDark.decorators = [
   ThemeDecorator(Theme.DARK),
+  StoreDecorator({ profile: { readonly: false } }),
+];
+
+export const EditableBlue = Template.bind({});
+EditableBlue.args = {};
+
+EditableBlue.decorators = [
+  ThemeDecorator(Theme.BLUE),
   StoreDecorator({ profile: { readonly: false } }),
 ];

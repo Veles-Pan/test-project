@@ -27,6 +27,12 @@ Dark.args = {
 };
 Dark.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({ login: {} })];
 
+export const Blue = Template.bind({});
+Blue.args = {
+  isOpen: true,
+};
+Blue.decorators = [ThemeDecorator(Theme.BLUE), StoreDecorator({ login: {} })];
+
 export const CommonWithData = Template.bind({});
 CommonWithData.args = {
   isOpen: true,
@@ -47,6 +53,15 @@ CommonWithErrorDark.args = {
 };
 CommonWithErrorDark.decorators = [
   ThemeDecorator(Theme.DARK),
+  StoreDecorator({ login: { username: 'TestName', password: '12345', error: 'Test Error' } }),
+];
+
+export const CommonWithErrorBlue = Template.bind({});
+CommonWithErrorBlue.args = {
+  isOpen: true,
+};
+CommonWithErrorBlue.decorators = [
+  ThemeDecorator(Theme.BLUE),
   StoreDecorator({ login: { username: 'TestName', password: '12345', error: 'Test Error' } }),
 ];
 
