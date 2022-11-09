@@ -15,11 +15,16 @@ export default {
 
 const Template: ComponentStory<typeof Counter> = () => <Counter />;
 
-export const CounterDefault = Template.bind({});
-CounterDefault.args = {};
-CounterDefault.decorators = [StoreDecorator({ counter: { value: 100 } })];
+export const Default = Template.bind({});
+Default.args = {};
+Default.decorators = [StoreDecorator({ counter: { value: 100 } })];
 
-export const CounterDark = Template.bind({});
-CounterDark.args = {};
+export const Dark = Template.bind({});
+Dark.args = {};
 
-CounterDark.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({ counter: { value: 100 } })];
+Dark.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({ counter: { value: 100 } })];
+
+export const Blue = Template.bind({});
+Blue.args = {};
+
+Blue.decorators = [ThemeDecorator(Theme.BLUE), StoreDecorator({ counter: { value: 100 } })];

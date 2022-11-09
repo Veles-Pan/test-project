@@ -15,22 +15,34 @@ export default {
 
 const Template: ComponentStory<typeof AppHeader> = (args) => <AppHeader {...args} />;
 
-export const AppHeaderDefault = Template.bind({});
-AppHeaderDefault.args = {};
-AppHeaderDefault.decorators = [StoreDecorator({ user: { authData: undefined } })];
+export const Default = Template.bind({});
+Default.args = {};
+Default.decorators = [StoreDecorator({ user: { authData: undefined } })];
 
-export const AppHeaderDark = Template.bind({});
-AppHeaderDark.args = {};
+export const Dark = Template.bind({});
+Dark.args = {};
 
-AppHeaderDark.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({ user: { authData: undefined } })];
+Dark.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({ user: { authData: undefined } })];
 
-export const AppHeaderDefaultWithUser = Template.bind({});
-AppHeaderDefaultWithUser.args = {};
-AppHeaderDefaultWithUser.decorators = [StoreDecorator({ user: { authData: 'Test' } })];
+export const Blue = Template.bind({});
+Blue.args = {};
 
-export const AppHeaderDarkWithUser = Template.bind({});
-AppHeaderDarkWithUser.args = {};
+Blue.decorators = [ThemeDecorator(Theme.BLUE), StoreDecorator({ user: { authData: undefined } })];
 
-AppHeaderDarkWithUser.decorators = [
+export const DefaultWithUser = Template.bind({});
+DefaultWithUser.args = {};
+DefaultWithUser.decorators = [StoreDecorator({ user: { authData: 'Test' } })];
+
+export const DarkWithUser = Template.bind({});
+DarkWithUser.args = {};
+
+DarkWithUser.decorators = [
   ThemeDecorator(Theme.DARK), StoreDecorator({ user: { authData: 'Test' } }),
+];
+
+export const BlueWithUser = Template.bind({});
+BlueWithUser.args = {};
+
+BlueWithUser.decorators = [
+  ThemeDecorator(Theme.BLUE), StoreDecorator({ user: { authData: 'Test' } }),
 ];

@@ -24,6 +24,12 @@ CommonWithPlaceholder.args = {
   placeholder: 'Test Placeholder',
 };
 
+export const CommonWithError = Template.bind({});
+CommonWithError.args = {
+  value: 'Test Value',
+  theme: InputThemes.ERROR,
+};
+
 export const DarkWithValue = Template.bind({});
 DarkWithValue.args = {
   value: 'Test Value',
@@ -36,8 +42,28 @@ DarkWithPlaceholder.args = {
 };
 DarkWithPlaceholder.decorators = [ThemeDecorator(Theme.DARK)];
 
-export const CommonWithError = Template.bind({});
-CommonWithError.args = {
+export const DarkWithError = Template.bind({});
+DarkWithError.args = {
   value: 'Test Value',
   theme: InputThemes.ERROR,
 };
+DarkWithError.decorators = [ThemeDecorator(Theme.DARK)];
+
+export const BlueWithValue = Template.bind({});
+BlueWithValue.args = {
+  value: 'Test Value',
+};
+BlueWithValue.decorators = [ThemeDecorator(Theme.BLUE)];
+
+export const BlueWithPlaceholder = Template.bind({});
+BlueWithPlaceholder.args = {
+  placeholder: 'Test Placeholder',
+};
+BlueWithPlaceholder.decorators = [ThemeDecorator(Theme.BLUE)];
+
+export const BlueWithError = Template.bind({});
+BlueWithError.args = {
+  value: 'Test Value',
+  theme: InputThemes.ERROR,
+};
+BlueWithError.decorators = [ThemeDecorator(Theme.BLUE)];

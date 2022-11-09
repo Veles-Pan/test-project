@@ -14,15 +14,22 @@ export default {
 
 const Template: ComponentStory<typeof Modal> = (args) => <Modal {...args} />;
 
-export const ModalDefault = Template.bind({});
-ModalDefault.args = {
+export const Default = Template.bind({});
+Default.args = {
   children: 'Text',
   isOpen: true,
 };
 
-export const ModalDark = Template.bind({});
-ModalDark.args = {
+export const Dark = Template.bind({});
+Dark.args = {
   children: 'Text',
   isOpen: true,
 };
-ModalDark.decorators = [ThemeDecorator(Theme.DARK)];
+Dark.decorators = [ThemeDecorator(Theme.DARK)];
+
+export const Blue = Template.bind({});
+Blue.args = {
+  children: 'Text',
+  isOpen: true,
+};
+Blue.decorators = [ThemeDecorator(Theme.BLUE)];

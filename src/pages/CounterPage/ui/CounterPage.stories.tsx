@@ -15,11 +15,16 @@ export default {
 
 const Template: ComponentStory<typeof CounterPage> = () => <CounterPage />;
 
-export const CounterPageDefault = Template.bind({});
-CounterPageDefault.args = {};
-CounterPageDefault.decorators = [StoreDecorator({ counter: { value: 100 } })];
+export const Default = Template.bind({});
+Default.args = {};
+Default.decorators = [StoreDecorator({ counter: { value: 100 } })];
 
-export const CounterPageDark = Template.bind({});
-CounterPageDark.args = {};
+export const Dark = Template.bind({});
+Dark.args = {};
 
-CounterPageDark.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({ counter: { value: 100 } })];
+Dark.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({ counter: { value: 100 } })];
+
+export const Blue = Template.bind({});
+Blue.args = {};
+
+Blue.decorators = [ThemeDecorator(Theme.BLUE), StoreDecorator({ counter: { value: 100 } })];

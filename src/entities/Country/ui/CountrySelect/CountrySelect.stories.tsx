@@ -21,12 +21,19 @@ Common.args = {
   onChange: () => {},
 };
 
-export const CommonDark = Template.bind({});
-CommonDark.args = {
+export const Dark = Template.bind({});
+Dark.args = {
   value: Country.Portugal,
   onChange: () => {},
 };
-CommonDark.decorators = [ThemeDecorator(Theme.DARK)];
+Dark.decorators = [ThemeDecorator(Theme.DARK)];
+
+export const Blue = Template.bind({});
+Blue.args = {
+  value: Country.Portugal,
+  onChange: () => {},
+};
+Blue.decorators = [ThemeDecorator(Theme.BLUE)];
 
 export const Readonly = Template.bind({});
 Readonly.args = {

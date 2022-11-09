@@ -41,3 +41,11 @@
   padding: 10px 20px;
   border-radius: 15px;
 }
+
+.cancel {
+  background-color: var(--error-text-color);
+  color: var(--bg-color);
+  font: var(--font-medium);
+  padding: 10px 20px;
+  border-radius: 15px;
+}

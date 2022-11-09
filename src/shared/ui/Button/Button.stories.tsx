@@ -19,11 +19,17 @@ Common.args = {
   children: 'Text',
 };
 
-export const CommonDark = Template.bind({});
-CommonDark.args = {
+export const Dark = Template.bind({});
+Dark.args = {
   children: 'Text',
 };
-CommonDark.decorators = [ThemeDecorator(Theme.DARK)];
+Dark.decorators = [ThemeDecorator(Theme.DARK)];
+
+export const Blue = Template.bind({});
+Blue.args = {
+  children: 'Text',
+};
+Blue.decorators = [ThemeDecorator(Theme.BLUE)];
 
 export const Switcher = Template.bind({});
 Switcher.args = {
@@ -39,6 +45,14 @@ SwitcherDark.args = {
 
 SwitcherDark.decorators = [ThemeDecorator(Theme.DARK)];
 
+export const SwitcherBlue = Template.bind({});
+SwitcherBlue.args = {
+  children: 'Text',
+  theme: ButtonThemes.SWITCHER,
+};
+
+SwitcherBlue.decorators = [ThemeDecorator(Theme.BLUE)];
+
 export const Clean = Template.bind({});
 Clean.args = {
   children: 'Text',
@@ -52,10 +66,23 @@ CleanDark.args = {
 };
 CleanDark.decorators = [ThemeDecorator(Theme.DARK)];
 
+export const CleanBlue = Template.bind({});
+CleanBlue.args = {
+  children: 'Text',
+  theme: ButtonThemes.CLEAN,
+};
+CleanBlue.decorators = [ThemeDecorator(Theme.BLUE)];
+
 export const Reload = Template.bind({});
 Reload.args = {
   children: 'Text',
   theme: ButtonThemes.RELOAD,
+};
+
+export const Cancel = Template.bind({});
+Cancel.args = {
+  children: 'Text',
+  theme: ButtonThemes.CANCEL,
 };
 
 export const Disabled = Template.bind({});

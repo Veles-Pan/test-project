@@ -14,10 +14,15 @@ export default {
 
 const Template: ComponentStory<typeof LanguageSwitcher> = (args) => <LanguageSwitcher {...args} />;
 
-export const LanguageSwitcherDefault = Template.bind({});
-LanguageSwitcherDefault.args = {};
+export const Default = Template.bind({});
+Default.args = {};
 
-export const LanguageSwitcherDark = Template.bind({});
-LanguageSwitcherDark.args = {};
+export const Dark = Template.bind({});
+Dark.args = {};
 
-LanguageSwitcherDark.decorators = [ThemeDecorator(Theme.DARK)];
+Dark.decorators = [ThemeDecorator(Theme.DARK)];
+
+export const Blue = Template.bind({});
+Blue.args = {};
+
+Blue.decorators = [ThemeDecorator(Theme.BLUE)];

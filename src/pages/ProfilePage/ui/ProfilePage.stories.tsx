@@ -22,30 +22,46 @@ const testFormData = {
   email: 'email@example.com',
 };
 
-export const ProfilePageDefault = Template.bind({});
-ProfilePageDefault.args = {};
-ProfilePageDefault.decorators = [
+export const Default = Template.bind({});
+Default.args = {};
+Default.decorators = [
   StoreDecorator({ profile: { form: testFormData, readonly: true } }),
 ];
 
-export const ProfilePageDark = Template.bind({});
-ProfilePageDark.args = {};
+export const Dark = Template.bind({});
+Dark.args = {};
 
-ProfilePageDark.decorators = [
+Dark.decorators = [
   ThemeDecorator(Theme.DARK),
   StoreDecorator({ profile: { form: testFormData, readonly: true } }),
 ];
 
-export const ProfilePageEditableDefault = Template.bind({});
-ProfilePageEditableDefault.args = {};
-ProfilePageEditableDefault.decorators = [
+export const Blue = Template.bind({});
+Blue.args = {};
+
+Blue.decorators = [
+  ThemeDecorator(Theme.BLUE),
+  StoreDecorator({ profile: { form: testFormData, readonly: true } }),
+];
+
+export const EditableDefault = Template.bind({});
+EditableDefault.args = {};
+EditableDefault.decorators = [
   StoreDecorator({ profile: { form: testFormData, readonly: false } }),
 ];
 
-export const ProfilePageEditableDark = Template.bind({});
-ProfilePageEditableDark.args = {};
+export const EditableDark = Template.bind({});
+EditableDark.args = {};
 
-ProfilePageEditableDark.decorators = [
+EditableDark.decorators = [
   ThemeDecorator(Theme.DARK),
+  StoreDecorator({ profile: { form: testFormData, readonly: false } }),
+];
+
+export const EditableBlue = Template.bind({});
+EditableBlue.args = {};
+
+EditableBlue.decorators = [
+  ThemeDecorator(Theme.BLUE),
   StoreDecorator({ profile: { form: testFormData, readonly: false } }),
 ];

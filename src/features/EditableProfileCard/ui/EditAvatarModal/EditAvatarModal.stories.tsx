@@ -27,6 +27,12 @@ Dark.args = {
 };
 Dark.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({ profile: { form: { avatar: 'https://avatar.png' } } })];
 
+export const Blue = Template.bind({});
+Blue.args = {
+  isOpen: true,
+};
+Blue.decorators = [ThemeDecorator(Theme.BLUE), StoreDecorator({ profile: { form: { avatar: 'https://avatar.png' } } })];
+
 export const Empty = Template.bind({});
 Empty.args = {
   isOpen: true,

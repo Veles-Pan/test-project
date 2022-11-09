@@ -6,7 +6,8 @@ export enum ButtonThemes {
   COMMON = 'common',
   SWITCHER = 'themeSwitcher',
   CLEAN = 'clean',
-  RELOAD = 'reload'
+  RELOAD = 'reload',
+  CANCEL = 'cancel',
 }
 
 interface ButtonProps extends HTMLAttributes<HTMLButtonElement> {

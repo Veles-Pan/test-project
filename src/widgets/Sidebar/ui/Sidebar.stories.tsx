@@ -15,30 +15,37 @@ export default {
 
 const Template: ComponentStory<typeof Sidebar> = (args) => <Sidebar {...args} />;
 
-export const SidebarDefault = Template.bind({});
-SidebarDefault.args = {
+export const Default = Template.bind({});
+Default.args = {
 };
-SidebarDefault.decorators = [
+Default.decorators = [
   StoreDecorator({
     user: { authData: '123' },
   }),
 ];
 
-export const SidebarDark = Template.bind({});
-SidebarDark.args = {
-
-};
-SidebarDark.decorators = [
+export const Dark = Template.bind({});
+Dark.args = {};
+Dark.decorators = [
   ThemeDecorator(Theme.DARK),
   StoreDecorator({
     user: { authData: '123' },
   }),
 ];
 
-export const SidebarNoAuth = Template.bind({});
-SidebarNoAuth.args = {
+export const Blue = Template.bind({});
+Blue.args = {};
+Blue.decorators = [
+  ThemeDecorator(Theme.BLUE),
+  StoreDecorator({
+    user: { authData: '123' },
+  }),
+];
+
+export const NoAuth = Template.bind({});
+NoAuth.args = {
 };
-SidebarNoAuth.decorators = [
+NoAuth.decorators = [
   StoreDecorator({
     user: { },
   }),

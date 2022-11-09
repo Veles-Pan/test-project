@@ -14,10 +14,15 @@ export default {
 
 const Template: ComponentStory<typeof NotFoundPage> = () => <NotFoundPage />;
 
-export const NotFoundPageDefault = Template.bind({});
-NotFoundPageDefault.args = {};
+export const Default = Template.bind({});
+Default.args = {};
 
-export const NotFoundPageDark = Template.bind({});
-NotFoundPageDark.args = {};
+export const Dark = Template.bind({});
+Dark.args = {};
 
-NotFoundPageDark.decorators = [ThemeDecorator(Theme.DARK)];
+Dark.decorators = [ThemeDecorator(Theme.DARK)];
+
+export const Blue = Template.bind({});
+Blue.args = {};
+
+Blue.decorators = [ThemeDecorator(Theme.BLUE)];

@@ -14,10 +14,15 @@ export default {
 
 const Template: ComponentStory<typeof ContentLoader> = (args) => <ContentLoader {...args} />;
 
-export const ContentLoaderDefault = Template.bind({});
-ContentLoaderDefault.args = {};
+export const Default = Template.bind({});
+Default.args = {};
 
-export const ContentLoaderDark = Template.bind({});
-ContentLoaderDark.args = {};
+export const Dark = Template.bind({});
+Dark.args = {};
 
-ContentLoaderDark.decorators = [ThemeDecorator(Theme.DARK)];
+Dark.decorators = [ThemeDecorator(Theme.DARK)];
+
+export const Blue = Template.bind({});
+Blue.args = {};
+
+Blue.decorators = [ThemeDecorator(Theme.BLUE)];
