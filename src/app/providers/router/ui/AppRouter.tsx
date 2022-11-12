@@ -1,22 +1,28 @@
 import { Routes, Route } from 'react-router-dom';
-import { Suspense, useMemo } from 'react';
+import { Suspense, useCallback } from 'react';
 import { ContentLoader } from 'widgets/ContentLoader';
-import { useSelector } from 'react-redux';
-import { getUserAuthData } from 'entities/User';
-import { routeConfig } from '../config/routerConfig';
+import { AppRouteProps, routeConfig } from '../config/routerConfig';
+import { RequireAuth } from './RequireAuth';
 
 const AppRouter = () => {
-  const isAuth = useSelector(getUserAuthData);
-
-  const routes = useMemo(() => Object.values(routeConfig).filter((route) => !route.authOnly || isAuth), [isAuth]);
+  const renderWithWrapper = useCallback((route: AppRouteProps) => {
+    const InnerElement = (
+      <Suspense fallback={<ContentLoader />}>
+        {route.element}
+      </Suspense>
+    );
+    return (
+      <Route
+        key={route.path}
+        path={route.path}
+        element={route.authOnly ? <RequireAuth>{InnerElement}</RequireAuth> : InnerElement}
+      />
+    );
+  }, []);
   return (
-    <Suspense fallback={<ContentLoader />}>
-      <Routes>
-        {routes.map(({ path, element }) => (
-          <Route key={path} path={path} element={element} />
-        ))}
-      </Routes>
-    </Suspense>
+    <Routes>
+      {Object.values(routeConfig).map(renderWithWrapper)}
+    </Routes>
   );
 };
 
