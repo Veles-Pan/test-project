@@ -1,18 +1,16 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { fetchArticleData } from '../services/fetchArticleData/fetchArticleData';
 import { IArticle } from '../types/article';
-import { ArticleSchema } from '../types/articleSchema';
+import { ArticleSchema } from '../types/ArticleSchema';
 
 const initialState: ArticleSchema = {
   isLoading: false,
-  error: undefined,
-  data: undefined,
 };
 
 export const ArticleSlice = createSlice({
-  name: 'Article',
+  name: 'article',
   initialState,
-  reducers: { },
+  reducers: {},
   extraReducers: (builder) => {
     builder
       .addCase(fetchArticleData.pending, (state) => {

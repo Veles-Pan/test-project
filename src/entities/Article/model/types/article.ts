@@ -5,7 +5,7 @@ export enum BlockTypes {
     IMAGE = 'IMAGE',
 }
 
-enum ArticleTypes {
+export enum ArticleTypes {
     LOREM = 'LOREM',
     IPSUM = 'IPSUM',
     DOLOR = 'DOLOR',

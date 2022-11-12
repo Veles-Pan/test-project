@@ -7,7 +7,7 @@ import { getArticleData } from '../model/selectors/getArticleData/getArticleData
 import { getArticleError } from '../model/selectors/getArticleError/getArticleError';
 import { getArticleLoading } from '../model/selectors/getArticleLoading/getArticleLoading';
 import { fetchArticleData } from '../model/services/fetchArticleData/fetchArticleData';
-import { articleReducer } from '../model/slice/articleSlice';
+import { articleReducer } from '../model/slice/ArticleSlice';
 import styles from './Article.module.scss';
 import { ArticleDetails } from './ArticleDetails/ArticleDetails';
 import { ArticleSkeleton } from './ArticleSkeleton/ArticleSceleton';
@@ -28,7 +28,9 @@ export const Article = memo(({ className, id }: ArticleProps) => {
   const data = useSelector(getArticleData);
 
   useEffect(() => {
-    dispatch(fetchArticleData(id));
+    if (__PROJECT__ !== 'storybook') {
+      dispatch(fetchArticleData(id));
+    }
   }, [dispatch, id]);
 
   let content: JSX.Element | null;
@@ -46,7 +48,6 @@ export const Article = memo(({ className, id }: ArticleProps) => {
       <div className={classNames(styles.container, {}, [className])}>
         {content}
       </div>
-
     </DynamicReducersLoader>
   );
 });
