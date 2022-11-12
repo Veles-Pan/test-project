@@ -1,5 +1,6 @@
 import { RoutePath } from 'app/providers/router/config/routerConfig';
 import { FC, SVGProps } from 'react';
+import { ArticlesIcon } from 'shared';
 import CounterIcon from 'shared/assets/counter.svg';
 import ProfileIcon from 'shared/assets/profile.svg';
 
@@ -22,5 +23,10 @@ export const sidebarItems: Omit<SidebarItemProps, 'collapsed'>[] = [
     text: 'sidebar.profile-page',
     Icon: ProfileIcon,
     isAuthOnly: true,
+  },
+  {
+    path: RoutePath.articles,
+    text: 'sidebar.articles-page',
+    Icon: ArticlesIcon,
   },
 ];

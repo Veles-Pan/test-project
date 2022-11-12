@@ -1,6 +1,7 @@
 import LogoImage from './assets/logo.svg';
 import ToggleArrowImage from './assets/toggle-arrow.svg';
 import EditIcon from './assets/edit.svg';
+import ArticlesIcon from './assets/articles.svg';
 
 export { classNames } from './lib/classNames/classNames';
 export { AppLink } from './ui/AppLink/AppLink';
@@ -14,4 +15,6 @@ export { LOCAL_STORAGE_THEME_KEY, LOCAL_STORAGE_AUTH } from './constants/localSt
 export { $api } from './api/api';
 export { Avatar } from './ui/Avatar/Avatar';
 export { Select } from './ui/Select/Select';
-export { LogoImage, ToggleArrowImage, EditIcon };
+export {
+  LogoImage, ToggleArrowImage, EditIcon, ArticlesIcon,
+};
