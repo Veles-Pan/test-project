@@ -1,7 +1,7 @@
 import { EditableProfileCard, fetchProfileData, profileReducer } from 'features/EditableProfileCard';
 import { useEffect } from 'react';
 import {
-  DynamicReducersLoader, ReducersList, useAppDispatch,
+  DynamicReducersLoader, LOCAL_STORAGE_AUTH, ReducersList, useAppDispatch,
 } from 'shared';
 import { ProfilePageHeader } from './ProfilePageHeader/ProfilePageHeader';
 
@@ -12,7 +12,8 @@ const ProfilePage = () => {
 
   useEffect(() => {
     if (__PROJECT__ !== 'storybook') {
-      dispatch(fetchProfileData());
+      const userId = localStorage.getItem(LOCAL_STORAGE_AUTH);
+      dispatch(fetchProfileData(userId || ''));
     }
   }, [dispatch]);
 

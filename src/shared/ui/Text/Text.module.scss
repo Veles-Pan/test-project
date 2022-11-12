@@ -26,3 +26,11 @@
     color: var(--error-text-color);
   }
 }
+
+.description {
+  .title,
+  .text {
+    color: var(--primary-color);
+    opacity: 0.7;
+  }
+}

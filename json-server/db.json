@@ -5,6 +5,7 @@
       "title": "Lorem ipsum dolor sit amet",
       "subtitle": "Urna porttitor rhoncus dolor purus",
       "cover": "https://i.imgur.com/5IM2wPD.png",
+      "authorId": "admin",
       "views": 1022,
       "createdAt": "26.09.2022",
       "type": ["LOREM", "IPSUM"],
@@ -61,19 +62,19 @@
   ],
   "comments": [
     {
-      "id": "1",
+      "id": "admin",
       "text": "some comment",
       "articleId": "1",
       "userId": "1"
     },
     {
-      "id": "2",
+      "id": "user",
       "text": "some comment 2",
       "articleId": "1",
       "userId": "1"
     },
     {
-      "id": "3",
+      "id": "admin",
       "text": "some comment 3",
       "articleId": "1",
       "userId": "1"

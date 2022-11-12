@@ -1,3 +1,10 @@
+.container {
+  height: 100vh;
+  position: fixed;
+  bottom: 0;
+  align-self: flex-start;
+}
+
 .sidebar {
   position: absolute;
   width: 200px;

@@ -9,6 +9,7 @@ import { getArticleLoading } from '../model/selectors/getArticleLoading/getArtic
 import { fetchArticleData } from '../model/services/fetchArticleData/fetchArticleData';
 import { articleReducer } from '../model/slice/articleSlice';
 import styles from './Article.module.scss';
+import { ArticleDetails } from './ArticleDetails/ArticleDetails';
 import { ArticleSkeleton } from './ArticleSkeleton/ArticleSceleton';
 
 interface ArticleProps {
@@ -22,8 +23,7 @@ const initialRedusers: ReducersList = {
 
 export const Article = memo(({ className, id }: ArticleProps) => {
   const dispatch = useAppDispatch();
-  // const isLoading = useSelector(getArticleLoading);
-  const isLoading = true;
+  const isLoading = useSelector(getArticleLoading);
   const error = useSelector(getArticleError);
   const data = useSelector(getArticleData);
 
@@ -35,10 +35,10 @@ export const Article = memo(({ className, id }: ArticleProps) => {
 
   if (isLoading) {
     content = <ArticleSkeleton />;
-  } else if (error) {
+  } else if (error || !data) {
     content = <Text title={error} theme={TextThemes.ERROR} />;
   } else {
-    content = <div>{data?.title}</div>;
+    content = <ArticleDetails data={data} />;
   }
 
   return (

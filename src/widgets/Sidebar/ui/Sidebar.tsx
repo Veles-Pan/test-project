@@ -20,31 +20,33 @@ export const Sidebar = memo(({ className }: SidebarProps) => {
   };
 
   return (
-    <div
-      data-testid="sidebar"
-      className={classNames(styles.sidebar, { [styles.collapsed]: !isOpen }, [
-        className,
-      ])}
-    >
-      <Button
-        data-testid="sidebar-toggle"
-        className={classNames(styles.button, {
-          [styles.buttonInverted]: isOpen,
-        })}
-        theme={ButtonThemes.CLEAN}
-        onClick={toggleSidebar}
+    <div className={styles.container}>
+      <div
+        data-testid="sidebar"
+        className={classNames(styles.sidebar, { [styles.collapsed]: !isOpen }, [
+          className,
+        ])}
       >
-        <ToggleArrowImage className={styles.arrow} />
-      </Button>
-      <div className={styles.items}>
-        <LanguageSwitcher
-          isOpen={isOpen}
-          className={classNames(styles.langSwitcher)}
-        />
-        {sidebarItems.map((item) => (
-          <SidebarItem key={item.path} {...item} collapsed={!isOpen} />
-        ))}
+        <Button
+          data-testid="sidebar-toggle"
+          className={classNames(styles.button, {
+            [styles.buttonInverted]: isOpen,
+          })}
+          theme={ButtonThemes.CLEAN}
+          onClick={toggleSidebar}
+        >
+          <ToggleArrowImage className={styles.arrow} />
+        </Button>
+        <div className={styles.items}>
+          <LanguageSwitcher
+            isOpen={isOpen}
+            className={classNames(styles.langSwitcher)}
+          />
+          {sidebarItems.map((item) => (
+            <SidebarItem key={item.path} {...item} collapsed={!isOpen} />
+          ))}
 
+        </div>
       </div>
     </div>
   );

@@ -1,4 +1,6 @@
-enum BlockTypes {
+import { Profile } from 'entities/Profile';
+
+export enum BlockTypes {
     TEXT = 'TEXT',
     IMAGE = 'IMAGE',
 }
@@ -15,12 +17,12 @@ export interface ArticleBlockBase {
     title?: string
 }
 
-interface ArticleTextBlock extends ArticleBlockBase {
+export interface ArticleTextBlock extends ArticleBlockBase {
     type: BlockTypes.TEXT
     paragraphs: string[]
 }
 
-interface ArticleImageBlock extends ArticleBlockBase {
+export interface ArticleImageBlock extends ArticleBlockBase {
     type: BlockTypes.IMAGE
     src: string
     alt?: string
@@ -31,6 +33,8 @@ export type ArticleBlock = ArticleTextBlock | ArticleImageBlock
 export interface IArticle {
     id: string;
     title: string;
+    authorId: string;
+    author?: Profile
     subtitle: string;
     cover: string;
     views: number;

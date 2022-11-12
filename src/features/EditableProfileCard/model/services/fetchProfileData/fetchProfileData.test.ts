@@ -15,6 +15,7 @@ const data: Profile = {
   city: 'Paris',
   currency: Currency.EUR,
   email: 'email',
+  id: '123',
 };
 
 describe('fetchProfileData', () => {
@@ -23,7 +24,7 @@ describe('fetchProfileData', () => {
 
     thunk.api.get.mockReturnValue(Promise.resolve({ data }));
 
-    const result = await thunk.callThunk();
+    const result = await thunk.callThunk(data.id!);
 
     expect(thunk.api.get).toHaveBeenCalled();
     expect(result.meta.requestStatus).toBe('fulfilled');
@@ -34,7 +35,7 @@ describe('fetchProfileData', () => {
     const thunk = new TestAsyncThunk(fetchProfileData);
 
     thunk.api.get.mockReturnValue(Promise.resolve({ status: 403 }));
-    const result = await thunk.callThunk();
+    const result = await thunk.callThunk(data.id!);
 
     expect(thunk.api.get).toHaveBeenCalled();
     expect(result.meta.requestStatus).toBe('rejected');

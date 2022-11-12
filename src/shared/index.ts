@@ -2,6 +2,8 @@ import LogoImage from './assets/logo.svg';
 import ToggleArrowImage from './assets/toggle-arrow.svg';
 import EditIcon from './assets/edit.svg';
 import ArticlesIcon from './assets/articles.svg';
+import CalendarIcon from './assets/calendar.svg';
+import ViewsIcon from './assets/views.svg';
 
 export { classNames } from './lib/classNames/classNames';
 export { AppLink } from './ui/AppLink/AppLink';
@@ -17,5 +19,5 @@ export { Avatar } from './ui/Avatar/Avatar';
 export { Select } from './ui/Select/Select';
 export { Skeleton } from './ui/Skeleton/Skeleton';
 export {
-  LogoImage, ToggleArrowImage, EditIcon, ArticlesIcon,
+  LogoImage, ToggleArrowImage, EditIcon, ArticlesIcon, CalendarIcon, ViewsIcon,
 };

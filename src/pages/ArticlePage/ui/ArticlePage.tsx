@@ -10,9 +10,7 @@ const ArticlesPage = () => {
   }
 
   return (
-    <div className="main">
-      <Article id={id} />
-    </div>
+    <Article id={id} />
   );
 };
 

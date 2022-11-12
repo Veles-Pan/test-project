@@ -4,6 +4,7 @@ import styles from './Text.module.scss';
 export enum TextThemes {
     COMMON = 'common',
     ERROR = 'error',
+    DESCRIPTION = 'description',
 }
 
 interface TextProps {

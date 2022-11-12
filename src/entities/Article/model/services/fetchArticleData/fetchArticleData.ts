@@ -12,9 +12,9 @@ export const fetchArticleData = createAsyncThunk<IArticle, string, ThunkConfig<s
         throw new Error();
       }
 
-      console.log(response);
+      const authorData = await extra.api.get(`/profiles/${response.data.authorId}`);
 
-      return response.data;
+      return { ...response.data, author: authorData.data };
     } catch (error) {
       console.log(error);
       return rejectWithValue('Error with fetching article data');
