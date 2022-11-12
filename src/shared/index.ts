@@ -15,6 +15,7 @@ export { LOCAL_STORAGE_THEME_KEY, LOCAL_STORAGE_AUTH } from './constants/localSt
 export { $api } from './api/api';
 export { Avatar } from './ui/Avatar/Avatar';
 export { Select } from './ui/Select/Select';
+export { Skeleton } from './ui/Skeleton/Skeleton';
 export {
   LogoImage, ToggleArrowImage, EditIcon, ArticlesIcon,
 };

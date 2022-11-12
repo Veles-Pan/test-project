@@ -1,11 +1,17 @@
-import { useTranslation } from 'react-i18next';
-import { Text } from 'shared';
+import { Article } from 'entities/Article';
+import { useParams } from 'react-router-dom';
+import { Text, TextThemes } from 'shared';
 
 const ArticlesPage = () => {
-  const { t } = useTranslation('article');
+  const { id } = useParams<{ id: string }>();
+
+  if (!id) {
+    return <Text title="Invalid URL" theme={TextThemes.ERROR} />;
+  }
+
   return (
     <div className="main">
-      <Text text={t('article-welcome')} />
+      <Article id={id} />
     </div>
   );
 };
