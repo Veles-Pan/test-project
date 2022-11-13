@@ -1,4 +1,5 @@
 import { Article } from 'entities/Article';
+import { Comment } from 'entities/Comment';
 import { useParams } from 'react-router-dom';
 import { Text, TextThemes } from 'shared';
 
@@ -10,7 +11,10 @@ const ArticlesPage = () => {
   }
 
   return (
-    <Article id={id} />
+    <>
+      <Article id={id} />
+      <Comment />
+    </>
   );
 };
 

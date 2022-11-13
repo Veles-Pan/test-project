@@ -13,6 +13,10 @@
   font: var(--font-base);
 }
 
+.bold {
+  font-weight: 600;
+}
+
 .common {
   .title,
   .text {
@@ -32,5 +36,21 @@
   .text {
     color: var(--primary-color);
     opacity: 0.7;
+  }
+}
+
+.additional {
+  .title,
+  .text {
+    color: var(--primary-color);
+    opacity: 0.5;
+  }
+
+  .text {
+    font: var(--font-small);
+  }
+
+  .title {
+    font: var(--font-base);
   }
 }

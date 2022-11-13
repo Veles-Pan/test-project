@@ -5,6 +5,7 @@ export enum TextThemes {
     COMMON = 'common',
     ERROR = 'error',
     DESCRIPTION = 'description',
+    ADDITIONAL = 'additional',
 }
 
 interface TextProps {
@@ -12,13 +13,14 @@ interface TextProps {
   title?: string
   text?: string
   theme?: TextThemes
+  isBold?: boolean
 }
 
 export const Text = ({
-  className, title, text, theme = TextThemes.COMMON,
+  className, title, text, theme = TextThemes.COMMON, isBold = false,
 }: TextProps) => (
   <div className={classNames(styles.container, {}, [className, styles[theme]])}>
     {title && <h1 className={styles.title}>{title}</h1>}
-    {text && <p className={styles.text}>{text}</p>}
+    {text && <p className={classNames(styles.text, { [styles.bold]: isBold })}>{text}</p>}
   </div>
 );

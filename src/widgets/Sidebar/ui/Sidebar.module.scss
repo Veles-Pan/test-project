@@ -1,12 +1,5 @@
-.container {
-  height: 100vh;
-  position: fixed;
-  bottom: 0;
-  align-self: flex-start;
-}
-
 .sidebar {
-  position: absolute;
+  position: fixed;
   width: 200px;
   left: 0;
   top: 0;
