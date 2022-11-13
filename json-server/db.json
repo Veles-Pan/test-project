@@ -62,22 +62,33 @@
   ],
   "comments": [
     {
-      "id": "admin",
-      "text": "some comment",
+      "id": "1",
+      "text": ["some comment"],
       "articleId": "1",
-      "userId": "1"
+      "userId": "admin",
+      "date": "2020-01-01T00:00:00.000Z"
     },
     {
-      "id": "user",
-      "text": "some comment 2",
+      "id": "2",
+      "text": ["some comment 2"],
       "articleId": "1",
-      "userId": "1"
+      "userId": "user",
+      "date": "2020-03-01T00:00:00.000Z"
     },
     {
-      "id": "admin",
-      "text": "some comment 3",
+      "id": "3",
+      "text": ["some comment 3", "some comment 4"],
       "articleId": "1",
-      "userId": "1"
+      "userId": "admin",
+      "date": "2020-03-01T04:00:00.000Z"
+    }
+    ,
+    {
+      "id": "4",
+      "text": ["some comment 3", "some comment 4"],
+      "articleId": "3",
+      "userId": "admin",
+      "date": "2020-04-01T00:00:00.000Z"
     }
   ],
   "users": [

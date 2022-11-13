@@ -1,1 +1,2 @@
-export { Comment } from './ui/Comment';
+export { Comments } from './ui/Comments';
+export { Comment } from './model/types/comment';
