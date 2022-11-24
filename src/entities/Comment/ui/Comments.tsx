@@ -1,4 +1,6 @@
 import { classNames, Text, TextThemes } from 'shared';
+import { AddComentForm } from 'features/AddCommentForm';
+import { useTranslation } from 'react-i18next';
 import styles from './Comments.module.scss';
 import { Comment } from '../model/types/comment';
 import { CommentList } from './CommentList/CommentList';
@@ -9,11 +11,13 @@ interface CommentsProps {
   comments?: Comment[]
   error?: string
   isLoading?: boolean
+  onSendComment: (text: string) => void
 }
 
 export const Comments = ({
-  className, comments, isLoading, error,
+  className, comments, isLoading, error, onSendComment,
 }: CommentsProps) => {
+  const { t } = useTranslation('article');
   if (isLoading) {
     return <div className={classNames(styles.container, {}, [className])}><CommentListSkeleton /></div>;
   }
@@ -26,7 +30,8 @@ export const Comments = ({
   }
   return (
     <div className={classNames(styles.container, {}, [className])}>
-      <Text title="Comments" />
+      <AddComentForm onSendComment={onSendComment} />
+      <Text title={t('comments.comments')} />
       <CommentList comments={comments} />
     </div>
   );

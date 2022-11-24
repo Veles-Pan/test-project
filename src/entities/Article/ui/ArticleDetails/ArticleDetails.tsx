@@ -1,5 +1,7 @@
+import { RoutePath } from 'app/providers/router/config/routerConfig';
 import { useCallback } from 'react';
 import {
+  AppLink,
   Avatar, CalendarIcon, classNames, Text, ViewsIcon,
 } from 'shared';
 import { ArticleBlock, BlockTypes, IArticle } from '../../model/types/article';
@@ -41,10 +43,10 @@ export const ArticleDetails = ({ className, data }: ArticleDetailsProps) => {
         <Text className={styles.titles} title={data.title} text={data.subtitle} />
         <div className={styles.profile}>
           <Avatar className={styles.avatar} src={data.author?.avatar} />
-          <div className={styles.authorInfo}>
-            <Text text={data.author?.first_name} />
-            <Text text={data.author?.last_name} />
-          </div>
+          <AppLink to={RoutePath.profile + data.authorId} className={styles.authorInfo}>
+            <Text isBold text={data.author?.first_name} />
+            <Text isBold text={data.author?.last_name} />
+          </AppLink>
         </div>
 
       </div>

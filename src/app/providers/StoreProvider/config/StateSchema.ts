@@ -6,6 +6,7 @@ import { ArticleSchema } from 'entities/Article';
 import { CounterSchema } from 'entities/Counter';
 import { ProfileSchema } from 'entities/Profile';
 import { UserSchema } from 'entities/User';
+import { CommentFormSchema } from 'features/AddCommentForm';
 import { LoginSchema } from 'features/AuthByUsername';
 import { ArticlePageCommentsSchema } from 'pages/ArticlePage';
 import { NavigateOptions, To } from 'react-router-dom';
@@ -16,6 +17,7 @@ user: UserSchema
 login?: LoginSchema
 profile?: ProfileSchema
 article?: ArticleSchema
+commentForm?: CommentFormSchema
 articlePageComments?: ArticlePageCommentsSchema
 }
 

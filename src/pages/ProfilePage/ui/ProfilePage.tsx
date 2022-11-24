@@ -1,7 +1,8 @@
 import { EditableProfileCard, fetchProfileData, profileReducer } from 'features/EditableProfileCard';
 import { useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 import {
-  DynamicReducersLoader, LOCAL_STORAGE_AUTH, ReducersList, useAppDispatch,
+  DynamicReducersLoader, ReducersList, useAppDispatch,
 } from 'shared';
 import { ProfilePageHeader } from './ProfilePageHeader/ProfilePageHeader';
 
@@ -9,13 +10,15 @@ const reducers: ReducersList = { profile: profileReducer };
 
 const ProfilePage = () => {
   const dispatch = useAppDispatch();
+  const { id } = useParams<{ id: string }>();
 
   useEffect(() => {
     if (__PROJECT__ !== 'storybook') {
-      const userId = localStorage.getItem(LOCAL_STORAGE_AUTH);
-      dispatch(fetchProfileData(userId || ''));
+      if (id) {
+        dispatch(fetchProfileData(id));
+      }
     }
-  }, [dispatch]);
+  }, [dispatch, id]);
 
   return (
     <DynamicReducersLoader reducers={reducers}>

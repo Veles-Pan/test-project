@@ -5,10 +5,13 @@
       "title": "Lorem ipsum dolor sit amet",
       "subtitle": "Urna porttitor rhoncus dolor purus",
       "cover": "https://i.imgur.com/5IM2wPD.png",
-      "authorId": "admin",
+      "authorId": "1",
       "views": 1022,
       "createdAt": "26.09.2022",
-      "type": ["LOREM", "IPSUM"],
+      "type": [
+        "LOREM",
+        "IPSUM"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -63,32 +66,98 @@
   "comments": [
     {
       "id": "1",
-      "text": ["some comment"],
+      "text": [
+        "some comment"
+      ],
       "articleId": "1",
-      "userId": "admin",
+      "userId": "2",
       "date": "2020-01-01T00:00:00.000Z"
     },
     {
       "id": "2",
-      "text": ["some comment 2"],
+      "text": [
+        "some comment 2"
+      ],
       "articleId": "1",
-      "userId": "user",
+      "userId": "2",
       "date": "2020-03-01T00:00:00.000Z"
     },
     {
       "id": "3",
-      "text": ["some comment 3", "some comment 4"],
+      "text": [
+        "some comment 3",
+        "some comment 4"
+      ],
       "articleId": "1",
-      "userId": "admin",
+      "userId": "1",
       "date": "2020-03-01T04:00:00.000Z"
-    }
-    ,
+    },
     {
       "id": "4",
-      "text": ["some comment 3", "some comment 4"],
+      "text": [
+        "some comment 3",
+        "some comment 4"
+      ],
       "articleId": "3",
-      "userId": "admin",
+      "userId": "1",
       "date": "2020-04-01T00:00:00.000Z"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "date": "2022-11-24T11:31:07.896Z",
+      "text": [
+        "\"Hello!\\nThis is my comment\\nOh my\""
+      ],
+      "id": "5"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "date": "2022-11-24T11:39:32.389Z",
+      "text": [
+        "Hello!",
+        "This is my first comment",
+        "Hehe"
+      ],
+      "id": "6"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "date": "2022-11-24T11:59:59.243Z",
+      "text": [
+        "ggggh"
+      ],
+      "id": "Rk1UlnK"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "date": "2022-11-24T12:16:35.552Z",
+      "text": [
+        "Hello word!"
+      ],
+      "id": "ksbD9l7"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "date": "2022-11-24T12:17:11.029Z",
+      "text": [
+        "Hehehe"
+      ],
+      "id": "I9QdPjf"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "date": "2022-11-24T12:19:38.610Z",
+      "text": [
+        "Not first comment",
+        "But cool"
+      ],
+      "id": "RR-oGwE"
     }
   ],
   "users": [
@@ -114,7 +183,7 @@
       "country": "Portugal",
       "city": "Porto",
       "username": "admin",
-      "id": "admin",
+      "id": "1",
       "avatar": "https://i.imgur.com/g6AWyos.jpg"
     },
     {
@@ -127,7 +196,7 @@
       "country": "Portugal",
       "city": "Porto",
       "username": "user",
-      "id": "user",
+      "id": "2",
       "avatar": "https://i.imgur.com/UvBboIO.jpg"
     }
   ]

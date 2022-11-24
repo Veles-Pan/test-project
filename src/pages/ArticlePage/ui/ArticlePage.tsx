@@ -1,6 +1,6 @@
 import { Article } from 'entities/Article';
 import { Comments } from 'entities/Comment';
-import { useEffect } from 'react';
+import { useCallback, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import {
@@ -12,6 +12,7 @@ import {
 import {
   getArticlePageCommentsLoading,
 } from '../model/selectors/getArticlePageCommentsLoading/getArticlePageCommentsLoading';
+import { addCommentForArticle } from '../model/services/addCommentForArticle/addCommentForArticle';
 import { fetchCommentsData } from '../model/services/fetchCommentsData/fetchCommentsData';
 import { articlePageCommentsReducer, getArticleComments } from '../model/slice/ArticlePageCommentsSlice';
 
@@ -32,14 +33,23 @@ const ArticlesPage = () => {
     }
   }, [dispatch, id]);
 
-  if (!id) {
+  const onSendCommentHandler = useCallback((text: string) => {
+    dispatch(addCommentForArticle(text));
+  }, [dispatch]);
+
+  if (!id && __PROJECT__ !== 'storybook') {
     return <Text title="Invalid URL" theme={TextThemes.ERROR} />;
   }
 
   return (
     <DynamicReducersLoader reducers={reducers}>
       <Article id={id} />
-      <Comments comments={comments} isLoading={isCommentsLoading} error={commentsError} />
+      <Comments
+        onSendComment={onSendCommentHandler}
+        comments={comments}
+        isLoading={isCommentsLoading}
+        error={commentsError}
+      />
     </DynamicReducersLoader>
   );
 };

@@ -1,4 +1,6 @@
+import { RoutePath } from 'app/providers/router/config/routerConfig';
 import {
+  AppLink,
   Avatar, classNames, Text, TextThemes,
 } from 'shared';
 import { Comment } from '../../model/types/comment';
@@ -16,7 +18,10 @@ export const CommentCard = ({ className, comment }: CommentCardProps) => {
       <div className={styles.userInfo}>
         <Avatar src={comment.user.avatar} className={styles.avatar} />
         <div className={styles.nameAndDate}>
-          <Text isBold text={comment.user.username} />
+
+          <AppLink to={RoutePath.profile + comment.userId}>
+            <Text isBold text={comment.user.username} />
+          </AppLink>
           <Text
             theme={TextThemes.ADDITIONAL}
             text={`${parsedDate.toLocaleDateString()}, ${parsedDate.toLocaleTimeString()}`}

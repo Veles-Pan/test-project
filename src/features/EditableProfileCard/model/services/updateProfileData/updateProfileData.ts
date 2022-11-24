@@ -1,14 +1,13 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { ThunkConfig } from 'app/providers/StoreProvider';
 import { Profile, ValidateProfileError } from 'entities/Profile';
-import { LOCAL_STORAGE_AUTH } from 'shared';
 import { getProfileFormData } from '../../selectors/getProfileFormData/getProfileFormData';
 import { profileActions } from '../../slice/ProfileSlice';
 import { validateProfileData } from '../validateProfileData/validateProfileData';
 
-export const updateProfileData = createAsyncThunk<Profile, void, ThunkConfig<ValidateProfileError[]>>(
+export const updateProfileData = createAsyncThunk<Profile, string, ThunkConfig<ValidateProfileError[]>>(
   'profile/updateProfileData',
-  async (_, {
+  async (userId, {
     extra, dispatch, rejectWithValue, getState,
   }) => {
     const formData = getProfileFormData(getState());
@@ -19,7 +18,7 @@ export const updateProfileData = createAsyncThunk<Profile, void, ThunkConfig<Val
       dispatch(profileActions.setValidationErrors(errors));
       return rejectWithValue(errors);
     }
-    const userId = localStorage.getItem(LOCAL_STORAGE_AUTH);
+
     try {
       const response = await extra.api.put<Profile>(`/profiles/${userId}`, formData);
 

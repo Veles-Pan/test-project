@@ -1,0 +1,13 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+  width: 100%;
+}
+
+.button {
+  width: fit-content;
+  align-self: flex-end;
+  max-width: 80vw;
+}

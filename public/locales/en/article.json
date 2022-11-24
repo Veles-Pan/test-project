@@ -1,4 +1,9 @@
 {
-    "article-welcome": "This is Article Page"
-  }
+    "article-welcome": "This is Article Page",
+    "comments": {
+      "add-comment": "Add Comment",
+      "input-placeholder": "Enter your comment here",
+      "comments": "Comments"
+    }
+}
   
