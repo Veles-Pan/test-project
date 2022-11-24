@@ -4,6 +4,8 @@ import EditIcon from './assets/edit.svg';
 import ArticlesIcon from './assets/articles.svg';
 import CalendarIcon from './assets/calendar.svg';
 import ViewsIcon from './assets/views.svg';
+import CounterIcon from './assets/counter.svg';
+import ProfileIcon from './assets/profile.svg';
 
 export { classNames } from './lib/classNames/classNames';
 export { AppLink } from './ui/AppLink/AppLink';
@@ -21,4 +23,5 @@ export { Skeleton } from './ui/Skeleton/Skeleton';
 export { TextArea } from './ui/TextArea/TextArea';
 export {
   LogoImage, ToggleArrowImage, EditIcon, ArticlesIcon, CalendarIcon, ViewsIcon,
+  CounterIcon, ProfileIcon,
 };

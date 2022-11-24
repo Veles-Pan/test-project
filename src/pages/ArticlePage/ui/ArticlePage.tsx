@@ -37,7 +37,7 @@ const ArticlesPage = () => {
     dispatch(addCommentForArticle(text));
   }, [dispatch]);
 
-  if (!id && __PROJECT__ !== 'storybook') {
+  if (!id) {
     return <Text title="Invalid URL" theme={TextThemes.ERROR} />;
   }
 

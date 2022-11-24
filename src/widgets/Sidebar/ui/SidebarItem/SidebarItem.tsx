@@ -3,7 +3,7 @@ import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { AppLink, classNames } from 'shared';
-import { SidebarItemProps } from '../../model/items';
+import { SidebarItemProps } from '../../model/types/sidebar';
 import styles from './SidebarItem.module.scss';
 
 export const SidebarItem = memo(({

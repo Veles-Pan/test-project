@@ -4,9 +4,10 @@ import {
 } from 'shared';
 import { ButtonThemes } from 'shared/ui/Button/Button';
 import { LanguageSwitcher } from 'widgets/LanguageSwitcher';
+import { useSelector } from 'react-redux';
 import styles from './Sidebar.module.scss';
 import { SidebarItem } from './SidebarItem/SidebarItem';
-import { sidebarItems } from '../model/items';
+import { getSidebarItems } from '../model/selectors/getSidebarItems';
 
 interface SidebarProps {
   className?: string
@@ -14,6 +15,7 @@ interface SidebarProps {
 
 export const Sidebar = memo(({ className }: SidebarProps) => {
   const [isOpen, setIsOpen] = useState(false);
+  const sidebarItems = useSelector(getSidebarItems);
 
   const toggleSidebar = () => {
     setIsOpen((prev) => !prev);
