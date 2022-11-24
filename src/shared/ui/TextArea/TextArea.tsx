@@ -35,12 +35,11 @@ export const TextArea: FC<TextAreaProps> = memo(({
   return (
     <textarea
       ref={TextAreaRef}
+      value={value}
       onChange={onChangeHandler}
       className={styles.container}
       placeholder={placeholder}
       {...rest}
-    >
-      {value}
-    </textarea>
+    />
   );
 });
