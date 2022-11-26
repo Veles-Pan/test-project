@@ -1,0 +1,20 @@
+.container {
+  width: 80vw;
+  max-width: 1260px;
+  margin-top: 120px;
+  margin-bottom: 30px;
+}
+
+.TILE {
+  display: flex;
+  flex-flow: row wrap;
+  gap: 20px;
+  justify-content: flex-start;
+}
+
+.LIST {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  justify-content: flex-start;
+}

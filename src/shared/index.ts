@@ -12,7 +12,7 @@ export { AppLink } from './ui/AppLink/AppLink';
 export { Button, ButtonThemes } from './ui/Button/Button';
 export { Modal } from './ui/Modal/Modal';
 export { Input, InputThemes } from './ui/Input/Input';
-export { Text, TextThemes } from './ui/Text/Text';
+export { Text, TextThemes, TextAlign } from './ui/Text/Text';
 export { DynamicReducersLoader, ReducersList } from './components/DynamicReducersLoader/DynamicReducersLoader';
 export { useAppDispatch } from './lib/hooks/useAppDispatch';
 export { LOCAL_STORAGE_THEME_KEY, LOCAL_STORAGE_AUTH } from './constants/localStorage';

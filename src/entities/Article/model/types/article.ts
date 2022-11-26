@@ -11,6 +11,11 @@ export enum ArticleTypes {
     DOLOR = 'DOLOR',
 }
 
+export enum TypesOfArticlesView {
+    LIST = 'LIST',
+    TILE = 'TILE',
+}
+
 export interface ArticleBlockBase {
     id: string
     type: BlockTypes
