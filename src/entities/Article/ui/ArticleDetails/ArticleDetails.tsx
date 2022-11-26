@@ -54,7 +54,6 @@ export const ArticleDetails = ({ className, data }: ArticleDetailsProps) => {
         {data.blocks.map((block) => (
           renderBlock(block)
         ))}
-        {/* <Skeleton width="100%" height="100%" borderRadius={20} /> */}
       </div>
 
     </div>

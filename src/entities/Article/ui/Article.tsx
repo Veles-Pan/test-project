@@ -10,7 +10,7 @@ import { fetchArticleData } from '../model/services/fetchArticleData/fetchArticl
 import { articleReducer } from '../model/slice/ArticleSlice';
 import styles from './Article.module.scss';
 import { ArticleDetails } from './ArticleDetails/ArticleDetails';
-import { ArticleSkeleton } from './ArticleSkeleton/ArticleSceleton';
+import { ArticleSkeleton } from './ArticleSkeleton/ArticleSkeleton';
 
 interface ArticleProps {
   className?: string
