@@ -9,11 +9,12 @@ interface ArticleListProps {
   className?: string
   articles: IArticle[]
   isLoading?: boolean
+  error?: string
   typeOfView?: TypesOfArticlesView
 }
 
 export const ArticleList = memo(({
-  className, articles, isLoading, typeOfView = TypesOfArticlesView.LIST,
+  className, articles, isLoading, error, typeOfView = TypesOfArticlesView.LIST,
 }: ArticleListProps) => {
   if (isLoading) {
     const numberOfSkeletons = typeOfView === TypesOfArticlesView.TILE ? 6 : 2;
