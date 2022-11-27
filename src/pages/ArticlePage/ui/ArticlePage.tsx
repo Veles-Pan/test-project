@@ -4,7 +4,7 @@ import { useCallback, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import {
-  DynamicReducersLoader, ReducersList, Text, TextThemes, useAppDispatch,
+  DynamicReducersLoader, Page, ReducersList, Text, TextThemes, useAppDispatch,
 } from 'shared';
 import {
   getArticlePageCommentsError,
@@ -43,13 +43,16 @@ const ArticlesPage = () => {
 
   return (
     <DynamicReducersLoader reducers={reducers}>
-      <Article id={id} />
-      <Comments
-        onSendComment={onSendCommentHandler}
-        comments={comments}
-        isLoading={isCommentsLoading}
-        error={commentsError}
-      />
+      <Page>
+        <Article id={id} />
+        <Comments
+          onSendComment={onSendCommentHandler}
+          comments={comments}
+          isLoading={isCommentsLoading}
+          error={commentsError}
+        />
+      </Page>
+
     </DynamicReducersLoader>
   );
 };

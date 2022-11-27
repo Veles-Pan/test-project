@@ -13,20 +13,16 @@ interface ArticleListProps {
   typeOfView?: TypesOfArticlesView
 }
 
+const getSkeletonItems = (typeOfView: TypesOfArticlesView) => Array.from(
+  { length: typeOfView === TypesOfArticlesView.TILE ? 4 : 2 },
+  (_, index) => (
+    <ArticleListItemSkeleton key={index} typeOfView={typeOfView} />
+  ),
+);
+
 export const ArticleList = memo(({
   className, articles, isLoading, error, typeOfView = TypesOfArticlesView.LIST,
 }: ArticleListProps) => {
-  if (isLoading) {
-    const numberOfSkeletons = typeOfView === TypesOfArticlesView.TILE ? 6 : 2;
-    const skeletonItems = Array.from({ length: numberOfSkeletons }, (_, index) => (
-      <ArticleListItemSkeleton key={index} typeOfView={typeOfView} />
-    ));
-    return (
-      <div className={classNames(styles.container, {}, [className, styles[typeOfView]])}>
-        {skeletonItems}
-      </div>
-    );
-  }
   const renderArticle = (article: IArticle) => (
     <ArticleListItem
       key={article.id}
@@ -38,6 +34,7 @@ export const ArticleList = memo(({
   return (
     <div className={classNames(styles.container, {}, [className, styles[typeOfView]])}>
       {articles.length > 0 ? articles.map(renderArticle) : null}
+      {isLoading && getSkeletonItems(typeOfView)}
     </div>
   );
 });

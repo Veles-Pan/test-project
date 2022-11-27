@@ -2,9 +2,10 @@ import { EditableProfileCard, fetchProfileData, profileReducer } from 'features/
 import { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import {
-  DynamicReducersLoader, ReducersList, useAppDispatch,
+  DynamicReducersLoader, Page, ReducersList, useAppDispatch,
 } from 'shared';
 import { ProfilePageHeader } from './ProfilePageHeader/ProfilePageHeader';
+import styles from './ProfilePage.module.scss';
 
 const reducers: ReducersList = { profile: profileReducer };
 
@@ -22,10 +23,10 @@ const ProfilePage = () => {
 
   return (
     <DynamicReducersLoader reducers={reducers}>
-      <div>
+      <Page className={styles.container}>
         <ProfilePageHeader />
         <EditableProfileCard />
-      </div>
+      </Page>
 
     </DynamicReducersLoader>
   );

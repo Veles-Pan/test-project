@@ -51,8 +51,9 @@ export const ArticleListItem = memo(({
   }
 
   const textBlock = article.blocks.find((block) => block.type === BlockTypes.TEXT) as ArticleTextBlock;
-  const paragraphs = textBlock.paragraphs.map((paragraph) => (
-    <Text text={paragraph} />
+  const paragraphs = textBlock.paragraphs.map((paragraph, index) => (
+    // eslint-disable-next-line react/no-array-index-key
+    <Text key={index} text={paragraph} />
   ));
 
   return (

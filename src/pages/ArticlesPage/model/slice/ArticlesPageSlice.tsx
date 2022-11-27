@@ -10,6 +10,8 @@ const initialState: ArticlesPageSchema = {
   ids: [],
   entities: {},
   typeOfView: TypesOfArticlesView.TILE,
+  hasMore: true,
+  page: 1,
 };
 
 const articlesAdapter = createEntityAdapter<IArticle>({
@@ -28,9 +30,13 @@ export const ArticlesPageSlice = createSlice({
       state.typeOfView = action.payload;
       localStorage.setItem(LOCAL_STORAGE_TYPE_OF_VIEW, action.payload);
     },
+    setPage: (state, action: PayloadAction<number>) => {
+      state.page = action.payload;
+    },
     initState: (state) => {
-      state.typeOfView = localStorage
-        .getItem(LOCAL_STORAGE_TYPE_OF_VIEW) as TypesOfArticlesView || TypesOfArticlesView.TILE;
+      const typeOfView = localStorage.getItem(LOCAL_STORAGE_TYPE_OF_VIEW) as TypesOfArticlesView;
+      state.typeOfView = typeOfView || TypesOfArticlesView.TILE;
+      state.limit = state.typeOfView === TypesOfArticlesView.TILE ? 12 : 3;
     },
   },
   extraReducers: (builder) => {
@@ -44,7 +50,8 @@ export const ArticlesPageSlice = createSlice({
         action: PayloadAction<IArticle[]>,
       ) => {
         state.isLoading = false;
-        articlesAdapter.setAll(state, action.payload);
+        articlesAdapter.addMany(state, action.payload);
+        state.hasMore = action.payload.length > 0;
       })
       .addCase(fetchArticlesList.rejected, (state, action) => {
         state.isLoading = false;

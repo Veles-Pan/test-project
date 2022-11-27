@@ -1,14 +1,17 @@
 import { ArticleList, TypesOfArticlesView } from 'entities/Article';
-import { useEffect } from 'react';
+import { useCallback, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import {
-  DynamicReducersLoader, ReducersList, useAppDispatch,
+  DynamicReducersLoader, Page, ReducersList, useAppDispatch,
 } from 'shared';
 import { getArticlesListError } from '../model/selectors/getArticlesListError/getArticlesListError';
+import { getArticlesListHasMore } from '../model/selectors/getArticlesListHasMore/getArticlesListHasMore';
 import { getArticlesListLoading } from '../model/selectors/getArticlesListLoading/getArticlesListLoading';
+import { getArticlesListPage } from '../model/selectors/getArticlesListPage/getArticlesListPage';
 import { getArticlesListTypeOfView } from '../model/selectors/getArticlesListTypeOfView/getArticlesListTypeOfView';
 import { fetchArticlesList } from '../model/services/fetchArticlesList/fetchArticlesList';
+import { fetchNextArticlesPage } from '../model/services/fetchNextArticlesPage/fetchNextArticlesPage';
 import { articlesPageActions, articlesPageReducer, getArticles } from '../model/slice/ArticlesPageSlice';
 import { ArticlesListHeader } from './ArticlesListHeader/ArticlesListHeader';
 import styles from './ArticlesPage.module.scss';
@@ -27,29 +30,33 @@ const ArticlesPage = () => {
 
   useEffect(() => {
     if (__PROJECT__ !== 'storybook') {
-      dispatch(fetchArticlesList());
       dispatch(articlesPageActions.initState());
+      dispatch(fetchArticlesList({ page: 1 }));
     }
   }, [dispatch]);
 
-  const setListViewHandler = () => {
-    dispatch(articlesPageActions.setTypeOfView(TypesOfArticlesView.LIST));
-  };
+  const onLoadNextPart = useCallback(() => {
+    dispatch(fetchNextArticlesPage());
+  }, [dispatch]);
 
-  const setTileViewHandler = () => {
+  const setListViewHandler = useCallback(() => {
+    dispatch(articlesPageActions.setTypeOfView(TypesOfArticlesView.LIST));
+  }, [dispatch]);
+
+  const setTileViewHandler = useCallback(() => {
     dispatch(articlesPageActions.setTypeOfView(TypesOfArticlesView.TILE));
-  };
+  }, [dispatch]);
 
   return (
     <DynamicReducersLoader reducers={initialRedusers}>
-      <div className={styles.container}>
+      <Page onScrollEnd={onLoadNextPart} className={styles.container}>
         <ArticlesListHeader
           currentTypeOfView={typeOfView as TypesOfArticlesView}
           setTileView={setTileViewHandler}
           setListView={setListViewHandler}
         />
         <ArticleList error={error} isLoading={isLoading} typeOfView={typeOfView} articles={articles} />
-      </div>
+      </Page>
     </DynamicReducersLoader>
   );
 };

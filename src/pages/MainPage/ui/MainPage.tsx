@@ -1,12 +1,13 @@
 import { useTranslation } from 'react-i18next';
-import { Text } from 'shared';
+import { Page, Text } from 'shared';
+import styles from './MainPage.module.scss';
 
 const MainPage = () => {
   const { t } = useTranslation('main');
   return (
-    <div className="main">
+    <Page className={styles.container}>
       <Text text={t('main-welcome')} />
-    </div>
+    </Page>
   );
 };
 
