@@ -1,5 +1,5 @@
 .sidebar {
-  position: fixed;
+  position: absolute;
   width: 200px;
   left: 0;
   top: 0;
@@ -12,7 +12,6 @@
   border-radius: 0 20px 20px 0;
   background-color: var(--header-color);
   transition: width 0.4s;
-  z-index: 9;
 }
 
 .button {
@@ -42,4 +41,10 @@
 
 .collapsed {
   width: 70px;
+}
+
+@media (max-width: 800px) {
+  .sidebar {
+    display: none;
+  }
 }

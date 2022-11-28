@@ -13,6 +13,13 @@
     "profile-page": "Profilo",
     "articles-page": "Articoli"
   },
+  "burgerMenu": {
+    "another-langiage": "English",
+    "counter-page": "Vai Conte",
+    "profile-page": "Profilo",
+    "articles-page": "Articoli",
+    "main-page":"Pagina Principale"
+  },
   "not-found": "La pagina non è stata trovata",
   "page-error": {
     "title": "Qualcosa è andato storto",
