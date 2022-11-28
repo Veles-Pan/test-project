@@ -26,19 +26,20 @@ export const ArticleDetails = ({ className, data }: ArticleDetailsProps) => {
     }
   }, []);
 
+  const parsedDate = new Date(data.createdAt).toLocaleDateString();
+
   return (
     <div className={classNames(styles.container, {}, [className])}>
       <div className={styles.info}>
         <div className={styles.details}>
           <div className={styles.iconText}>
             <CalendarIcon className={styles.icon} />
-            <Text text={data.createdAt} />
+            <Text text={parsedDate} />
           </div>
           <div className={styles.iconText}>
             <ViewsIcon className={styles.icon} />
             <Text text={data.views.toString()} />
           </div>
-          <Text className={styles.share} text="Share this article" />
         </div>
         <Text className={styles.titles} title={data.title} text={data.subtitle} />
         <div className={styles.profile}>
