@@ -7,6 +7,7 @@ import {
 } from 'shared';
 import { getArticlesListError } from '../model/selectors/getArticlesListError/getArticlesListError';
 import { getArticlesListHasMore } from '../model/selectors/getArticlesListHasMore/getArticlesListHasMore';
+import { getArticlesListInited } from '../model/selectors/getArticlesListInited/getArticlesListInited';
 import { getArticlesListLoading } from '../model/selectors/getArticlesListLoading/getArticlesListLoading';
 import { getArticlesListPage } from '../model/selectors/getArticlesListPage/getArticlesListPage';
 import { getArticlesListTypeOfView } from '../model/selectors/getArticlesListTypeOfView/getArticlesListTypeOfView';
@@ -27,13 +28,14 @@ const ArticlesPage = () => {
   const isLoading = useSelector(getArticlesListLoading);
   const typeOfView = useSelector(getArticlesListTypeOfView);
   const error = useSelector(getArticlesListError);
+  const inited = useSelector(getArticlesListInited);
 
   useEffect(() => {
-    if (__PROJECT__ !== 'storybook') {
+    if (__PROJECT__ !== 'storybook' && !inited) {
       dispatch(articlesPageActions.initState());
       dispatch(fetchArticlesList({ page: 1 }));
     }
-  }, [dispatch]);
+  }, [dispatch, inited]);
 
   const onLoadNextPart = useCallback(() => {
     dispatch(fetchNextArticlesPage());

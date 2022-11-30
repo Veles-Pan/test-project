@@ -12,6 +12,7 @@ const initialState: ArticlesPageSchema = {
   typeOfView: TypesOfArticlesView.TILE,
   hasMore: true,
   page: 1,
+  _inited: false,
 };
 
 const articlesAdapter = createEntityAdapter<IArticle>({
@@ -37,6 +38,7 @@ export const ArticlesPageSlice = createSlice({
       const typeOfView = localStorage.getItem(LOCAL_STORAGE_TYPE_OF_VIEW) as TypesOfArticlesView;
       state.typeOfView = typeOfView || TypesOfArticlesView.TILE;
       state.limit = state.typeOfView === TypesOfArticlesView.TILE ? 12 : 3;
+      state._inited = true;
     },
   },
   extraReducers: (builder) => {
