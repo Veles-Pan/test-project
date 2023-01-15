@@ -15,16 +15,31 @@ export { Button, ButtonThemes } from './ui/Button/Button';
 export { Modal } from './ui/Modal/Modal';
 export { Input, InputThemes } from './ui/Input/Input';
 export { Text, TextThemes, TextAlign } from './ui/Text/Text';
-export { DynamicReducersLoader, ReducersList } from './components/DynamicReducersLoader/DynamicReducersLoader';
+export {
+  DynamicReducersLoader,
+  ReducersList,
+} from './components/DynamicReducersLoader/DynamicReducersLoader';
 export { useAppDispatch } from './lib/hooks/useAppDispatch';
-export { LOCAL_STORAGE_THEME_KEY, LOCAL_STORAGE_AUTH, LOCAL_STORAGE_TYPE_OF_VIEW } from './constants/localStorage';
+export {
+  LOCAL_STORAGE_THEME_KEY,
+  LOCAL_STORAGE_AUTH,
+  LOCAL_STORAGE_TYPE_OF_VIEW,
+} from './constants/localStorage';
 export { $api } from './api/api';
 export { Avatar } from './ui/Avatar/Avatar';
-export { Select } from './ui/Select/Select';
+export { Select, SelectOption } from './ui/Select/Select';
 export { Skeleton } from './ui/Skeleton/Skeleton';
 export { TextArea } from './ui/TextArea/TextArea';
 export { Page } from './ui/Page/Page';
 export {
-  LogoImage, ToggleArrowImage, EditIcon, ArticlesIcon, CalendarIcon, ViewsIcon,
-  CounterIcon, ProfileIcon, TileViewIcon, ListViewIcon,
+  LogoImage,
+  ToggleArrowImage,
+  EditIcon,
+  ArticlesIcon,
+  CalendarIcon,
+  ViewsIcon,
+  CounterIcon,
+  ProfileIcon,
+  TileViewIcon,
+  ListViewIcon,
 };

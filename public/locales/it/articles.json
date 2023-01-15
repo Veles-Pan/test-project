@@ -1,5 +1,11 @@
 {
-    "articles-welcome": "Questa è la pagina degli articoli",
-    "read-more": "Leggi di più..."
+  "articles-welcome": "Questa è la pagina degli articoli",
+  "read-more": "Leggi di più...",
+  "sort": {
+    "title": "Titolo",
+    "created-at": "Creato a",
+    "views": "Visualizzazioni",
+    "search": "Ricerca...",
+    "sort-by": "Ordina per"
   }
-  
+}

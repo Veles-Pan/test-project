@@ -1,6 +1,14 @@
-import { createEntityAdapter, createSlice, PayloadAction } from '@reduxjs/toolkit';
+import {
+  createEntityAdapter,
+  createSlice,
+  PayloadAction,
+} from '@reduxjs/toolkit';
 import { StateSchema } from 'app/providers/StoreProvider';
-import { IArticle, TypesOfArticlesView } from 'entities/Article';
+import {
+  ArticleSortFields,
+  IArticle,
+  TypesOfArticlesView,
+} from 'entities/Article';
 import { LOCAL_STORAGE_TYPE_OF_VIEW } from 'shared';
 import { fetchArticlesList } from '../services/fetchArticlesList/fetchArticlesList';
 import { ArticlesPageSchema } from '../types/articlesPageSchema';
@@ -12,6 +20,9 @@ const initialState: ArticlesPageSchema = {
   typeOfView: TypesOfArticlesView.TILE,
   hasMore: true,
   page: 1,
+  search: '',
+  order: 'asc',
+  sort: ArticleSortFields.CREATED_AT,
 };
 
 const articlesAdapter = createEntityAdapter<IArticle>({
@@ -24,7 +35,8 @@ export const getArticles = articlesAdapter.getSelectors<StateSchema>(
 
 export const ArticlesPageSlice = createSlice({
   name: 'article',
-  initialState: articlesAdapter.getInitialState<ArticlesPageSchema>(initialState),
+  initialState:
+    articlesAdapter.getInitialState<ArticlesPageSchema>(initialState),
   reducers: {
     setTypeOfView: (state, action: PayloadAction<TypesOfArticlesView>) => {
       state.typeOfView = action.payload;
@@ -33,25 +45,42 @@ export const ArticlesPageSlice = createSlice({
     setPage: (state, action: PayloadAction<number>) => {
       state.page = action.payload;
     },
+    setSearch: (state, action: PayloadAction<string>) => {
+      state.search = action.payload;
+    },
+    setOrder: (state, action: PayloadAction<'asc' | 'desc'>) => {
+      state.order = action.payload;
+    },
+    setSort: (state, action: PayloadAction<ArticleSortFields>) => {
+      state.sort = action.payload;
+    },
     initState: (state) => {
-      const typeOfView = localStorage.getItem(LOCAL_STORAGE_TYPE_OF_VIEW) as TypesOfArticlesView;
+      const typeOfView = localStorage.getItem(
+        LOCAL_STORAGE_TYPE_OF_VIEW,
+      ) as TypesOfArticlesView;
       state.typeOfView = typeOfView || TypesOfArticlesView.TILE;
       state.limit = state.typeOfView === TypesOfArticlesView.TILE ? 12 : 3;
     },
   },
   extraReducers: (builder) => {
     builder
-      .addCase(fetchArticlesList.pending, (state) => {
+      .addCase(fetchArticlesList.pending, (state, action) => {
         state.error = undefined;
         state.isLoading = true;
+
+        if (action.meta.arg.replace) {
+          articlesAdapter.removeAll(state);
+        }
       })
-      .addCase(fetchArticlesList.fulfilled, (
-        state,
-        action: PayloadAction<IArticle[]>,
-      ) => {
+      .addCase(fetchArticlesList.fulfilled, (state, action) => {
         state.isLoading = false;
-        articlesAdapter.addMany(state, action.payload);
         state.hasMore = action.payload.length > 0;
+
+        if (action.meta.arg.replace) {
+          articlesAdapter.setAll(state, action.payload);
+        } else {
+          articlesAdapter.addMany(state, action.payload);
+        }
       })
       .addCase(fetchArticlesList.rejected, (state, action) => {
         state.isLoading = false;
