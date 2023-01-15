@@ -732,6 +732,33 @@
         "Not the best one"
       ],
       "id": "zY1vUNG"
+    },
+    {
+      "articleId": "2",
+      "userId": "1",
+      "date": "2023-01-15T15:27:30.663Z",
+      "text": [
+        "Wow"
+      ],
+      "id": "W-lQjP8"
+    },
+    {
+      "articleId": "5",
+      "userId": "1",
+      "date": "2023-01-15T15:33:17.188Z",
+      "text": [
+        "Nice job!"
+      ],
+      "id": "Tgj8ENf"
+    },
+    {
+      "articleId": "5",
+      "userId": "1",
+      "date": "2023-01-15T15:33:26.371Z",
+      "text": [
+        "Great!"
+      ],
+      "id": "o6i9JQ6"
     }
   ],
   "users": [
