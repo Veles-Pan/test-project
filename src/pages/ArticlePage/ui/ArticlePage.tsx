@@ -35,7 +35,8 @@ const ArticlesPage = () => {
 
   const onSendCommentHandler = useCallback((text: string) => {
     dispatch(addCommentForArticle(text));
-  }, [dispatch]);
+    dispatch(fetchCommentsData(id));
+  }, [dispatch, id]);
 
   if (!id) {
     return <Text title="Invalid URL" theme={TextThemes.ERROR} />;

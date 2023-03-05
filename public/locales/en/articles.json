@@ -1,5 +1,11 @@
 {
-    "articles-welcome": "This is Articles Page",
-    "read-more": "Read More..."
+  "articles-welcome": "This is Articles Page",
+  "read-more": "Read More...",
+  "sort": {
+    "title": "Title",
+    "created-at": "Created at",
+    "views": "Views",
+    "search": "Search...",
+    "sort-by": "Sort by"
+  }
 }
-  
