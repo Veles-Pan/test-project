@@ -33,7 +33,7 @@ export const ArticleList = memo(({
 
   return (
     <div className={classNames(styles.container, {}, [className, styles[typeOfView]])}>
-      {articles.length > 0 ? articles.map(renderArticle) : null}
+      {articles?.length > 0 ? articles.map(renderArticle) : null}
       {isLoading && getSkeletonItems(typeOfView)}
     </div>
   );
