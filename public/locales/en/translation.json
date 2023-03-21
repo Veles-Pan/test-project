@@ -10,7 +10,15 @@
     "another-langiage": "Italiana",
     "another-langiage-short": "IT",
     "counter-page": "Go Count",
-    "profile-page": "Profile"
+    "profile-page": "Profile",
+    "articles-page": "Articles"
+  },
+  "burgerMenu": {
+    "another-langiage": "Italiana",
+    "counter-page": "Go Count",
+    "profile-page": "Profile",
+    "articles-page": "Articles",
+    "main-page":"Main Page"
   },
   "not-found": "Page is not found",
   "page-error": {

@@ -42,3 +42,9 @@
 .collapsed {
   width: 70px;
 }
+
+@media (max-width: 800px) {
+  .sidebar {
+    display: none;
+  }
+}

@@ -2,7 +2,7 @@ import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import {
-  Button, classNames, Input, useAppDispatch,
+  Button, classNames, Input, LOCAL_STORAGE_AUTH, useAppDispatch,
 } from 'shared';
 import { getProfileFormData } from '../../model/selectors/getProfileFormData/getProfileFormData';
 import { updateProfileData } from '../../model/services/updateProfileData/updateProfileData';
@@ -17,6 +17,7 @@ export interface EditAvatarProps {
 const EditAvatar = memo(({ className, onClose }: EditAvatarProps) => {
   const { t } = useTranslation('profile');
   const dispatch = useAppDispatch();
+  const userId = localStorage.getItem(LOCAL_STORAGE_AUTH);
 
   const formData = useSelector(getProfileFormData);
 
@@ -25,8 +26,8 @@ const EditAvatar = memo(({ className, onClose }: EditAvatarProps) => {
   }, [dispatch]);
 
   const onSaveHandler = useCallback(() => {
-    dispatch(updateProfileData());
-  }, [dispatch]);
+    dispatch(updateProfileData(userId || ''));
+  }, [dispatch, userId]);
 
   const onCancelHandler = useCallback(() => {
     dispatch(profileActions.cancelEdittingAvatar());

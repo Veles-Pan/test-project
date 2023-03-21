@@ -1,5 +1,5 @@
 import './styles/main.scss';
-import { AppHeader } from 'widgets/AppHeader';
+import { AppHeader, MobileHeader } from 'widgets/AppHeader';
 import { Sidebar } from 'widgets/Sidebar';
 import { Suspense, useEffect } from 'react';
 import { ContentLoader } from 'widgets/ContentLoader';
@@ -16,6 +16,7 @@ const App = () => {
     <div className="app">
       <Suspense fallback={<ContentLoader />}>
         <AppHeader />
+        <MobileHeader />
         <AppRouter />
         <Sidebar />
       </Suspense>

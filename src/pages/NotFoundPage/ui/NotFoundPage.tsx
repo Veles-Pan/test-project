@@ -1,12 +1,12 @@
 import { useTranslation } from 'react-i18next';
-import { Text } from 'shared';
+import { Page, Text } from 'shared';
 import styles from './NotFoundPage.module.scss';
 
 export const NotFoundPage = () => {
   const { t } = useTranslation();
   return (
-    <div className={styles.container}>
+    <Page className={styles.container}>
       <Text title={t('not-found')} />
-    </div>
+    </Page>
   );
 };

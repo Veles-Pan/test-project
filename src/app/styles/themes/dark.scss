@@ -1,7 +1,9 @@
 .app_dark_theme {
   --bg-color: #1c1c28;
   --bg-secondary-color: #353542;
+  --bg-secondary-color-transparent: rgba(53 53 66 / 50%);
   --primary-color: #dadadb;
+  --primary-color-transparent: rgba(218 218 219 / 50%);
   --secondary-color: #785eea;
   --header-color: #486c6d;
   --header-color-inverted: #5f9ea0;
@@ -9,4 +11,6 @@
   --input-text-color: #1c1c28;
   --error-text-color: #a52c36;
   --icon-color: #1c1c28;
+  --skeleton-shadow: #141418;
+  --skeleton-color: #2f2f38;
 }

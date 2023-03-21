@@ -1,0 +1,28 @@
+.container {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.info {
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.content {
+  height: 50vh;
+}
+
+.profile {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  height: 20%;
+}
+
+.avatar {
+  max-height: 100%;
+}

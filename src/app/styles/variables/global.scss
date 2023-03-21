@@ -16,9 +16,19 @@
   --font-large:
     var(--font-size-large) / var(--font-line-large)
     var(--fon-family-titles);
+  --font-small:
+    var(--font-size-small) / var(--font-line-small)
+    var(--fon-family-base);
+  --font-size-small: 14px;
+  --font-line-small: 1.2;
   --header-height: 6rem;
+  --header-height-mobile: 4rem;
   --modal-z-index: 10;
   --overlay-bg-color: rgb(0 0 0 / 50%);
   --reload-button-bg-color: #d1b4e2;
   --reload-button-text-color: #000;
+  --from-extra-large-tolarge: 1920px;
+  --from-large-to-medium: 1024px;
+  --from-medium-to-small: 768px;
+  --from-small-to-extra-small: 480px;
 }

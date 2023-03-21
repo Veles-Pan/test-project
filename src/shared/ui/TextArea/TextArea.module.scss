@@ -1,0 +1,15 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  min-height: 80px;
+  background: transparent;
+  border: 1px solid var(--primary-color);
+  border-radius: 20px;
+  padding: 15px;
+  font: var(--font-base);
+  color: var(--primary-color);
+  overflow: hidden;
+  resize: none;
+}
