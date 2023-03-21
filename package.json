@@ -6,7 +6,7 @@
   "scripts": {
     "start": "webpack serve --env port=3000",
     "start:server:dev": "node ./json-server/index.js",
-    "build:prod": "webpack --env mode=production",
+    "build:prod": "webpack --env mode=production apiUrl=https://test-project-server-eta.vercel.app/",
     "build:dev": "webpack --env mode=development",
     "lint:ts": " eslint \"**/*.{ts,tsx}\"",
     "lint:ts:fix": " eslint \"**/*.{ts,tsx}\" --fix",
@@ -53,6 +53,7 @@
     "@typescript-eslint/eslint-plugin": "^5.38.0",
     "@typescript-eslint/parser": "^5.38.0",
     "babel-loader": "^8.2.5",
+    "copy-webpack-plugin": "^11.0.0",
     "css-loader": "^6.7.1",
     "eslint": "^8.23.1",
     "eslint-config-airbnb": "^19.0.4",
