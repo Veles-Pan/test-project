@@ -24,7 +24,7 @@ export const ArticleListItem = memo(({
 
   if (typeOfView === TypesOfArticlesView.TILE) {
     return (
-      <AppLink to={article.id} className={classNames(styles.container, {}, [className, styles[typeOfView]])}>
+      <AppLink to={`/articles/${article.id}`} className={classNames(styles.container, {}, [className, styles[typeOfView]])}>
         <Text align={TextAlign.CENTER} className={styles.title} text={article.title} isBold />
         <div className={styles.imageWrapper}>
           <img className={styles.cover} alt="cover" src={article.cover} />

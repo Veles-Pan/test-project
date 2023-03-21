@@ -8,7 +8,7 @@ import { ProfileSchema } from 'entities/Profile';
 import { UserSchema } from 'entities/User';
 import { CommentFormSchema } from 'features/AddCommentForm';
 import { LoginSchema } from 'features/AuthByUsername';
-import { ArticlePageCommentsSchema } from 'pages/ArticlePage';
+import { ArticlePageSchema } from 'pages/ArticlePage/model/types';
 import { ArticlesPageSchema } from 'pages/ArticlesPage';
 import { NavigateOptions, To } from 'react-router-dom';
 
@@ -19,7 +19,7 @@ login?: LoginSchema
 profile?: ProfileSchema
 article?: ArticleSchema
 commentForm?: CommentFormSchema
-articlePageComments?: ArticlePageCommentsSchema
+articlePage?: ArticlePageSchema
 articlesList?: ArticlesPageSchema
 }
 

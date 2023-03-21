@@ -19,6 +19,7 @@ import {
   Text,
   useAppDispatch,
 } from 'shared';
+import { useDebounce } from 'shared/lib/hooks/useDebounce';
 import { articlesPageActions } from '../../model/slice/ArticlesPageSlice';
 import styles from './ArticlesListHeader.module.scss';
 import { ArticleViewSelector } from './ArticleViewSelector';
@@ -45,9 +46,11 @@ export const ArticlesListHeader = ({ className }: ArticlesListHeaderProps) => {
     [t],
   );
 
-  const fetachData = useCallback(() => {
+  const fetchData = useCallback(() => {
     dispatch(fetchArticlesList({ replace: true }));
   }, [dispatch]);
+
+  const debouncedFetchData = useDebounce(fetchData, 500);
 
   const setViewHandler = useCallback(
     (view: TypesOfArticlesView) => {
@@ -60,25 +63,25 @@ export const ArticlesListHeader = ({ className }: ArticlesListHeaderProps) => {
     const newOrder = order === 'asc' ? 'desc' : 'asc';
     dispatch(articlesPageActions.setOrder(newOrder));
     dispatch(articlesPageActions.setPage(1));
-    fetachData();
-  }, [dispatch, fetachData, order]);
+    fetchData();
+  }, [dispatch, fetchData, order]);
 
   const onSearchInputHandler = useCallback(
     (value: string) => {
       dispatch(articlesPageActions.setSearch(value));
       dispatch(articlesPageActions.setPage(1));
-      fetachData();
+      debouncedFetchData();
     },
-    [dispatch, fetachData],
+    [debouncedFetchData, dispatch],
   );
 
   const onChangeSortHandler = useCallback(
     (value: ArticleSortFields) => {
       dispatch(articlesPageActions.setSort(value));
       dispatch(articlesPageActions.setPage(1));
-      fetachData();
+      fetchData();
     },
-    [dispatch, fetachData],
+    [dispatch, fetchData],
   );
 
   return (

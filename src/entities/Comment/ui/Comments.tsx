@@ -18,9 +18,7 @@ export const Comments = ({
   className, comments, isLoading, error, onSendComment,
 }: CommentsProps) => {
   const { t } = useTranslation('article');
-  if (isLoading) {
-    return <div className={classNames(styles.container, {}, [className])}><CommentListSkeleton /></div>;
-  }
+
   if (error) {
     return (
       <div className={classNames(styles.container, {}, [className])}>
@@ -32,7 +30,15 @@ export const Comments = ({
     <div className={classNames(styles.container, {}, [className])}>
       <AddComentForm onSendComment={onSendComment} />
       <Text title={t('comments.comments')} />
-      <CommentList comments={comments} />
+
+      {isLoading && <div className={classNames(styles.container, {}, [className])}><CommentListSkeleton /></div>}
+      {error && (
+        <div className={classNames(styles.container, {}, [className])}>
+          <Text title={error} theme={TextThemes.ERROR} />
+        </div>
+      )}
+      {!isLoading && !error && (<CommentList comments={comments} />)}
+
     </div>
   );
 };
